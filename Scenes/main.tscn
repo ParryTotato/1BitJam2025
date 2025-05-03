@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bh8cpqp8e8p50"]
+[gd_scene load_steps=23 format=4 uid="uid://bh8cpqp8e8p50"]
 
 [ext_resource type="Texture2D" uid="uid://btntyrknohr88" path="res://Assets/ground_06.png" id="1_wsu2k"]
 [ext_resource type="Texture2D" uid="uid://bvanp8jmbq3hy" path="res://Assets/block_07.png" id="2_k12tt"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cdu4ysdygax50" path="res://Assets/Player/player_08.png" id="13_1w6v2"]
 [ext_resource type="Texture2D" uid="uid://dxvmcdyrxth0j" path="res://Assets/Player/player_09.png" id="14_ueoa1"]
 [ext_resource type="Texture2D" uid="uid://dmowdr0bfdr84" path="res://Assets/Player/player_10.png" id="15_6vcvc"]
+[ext_resource type="Script" uid="uid://c2u310usqqs5n" path="res://Scenes/Box/box.gd" id="16_h1bgf"]
+[ext_resource type="Texture2D" uid="uid://yl7emk8tt66q" path="res://Assets/crate_42.png" id="16_k12tt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7k868"]
 texture = ExtResource("2_k12tt")
@@ -100,6 +102,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e08e2"]
 size = Vector2(44, 54)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1bgf"]
+size = Vector2(58, 58)
+
 [node name="Main" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
@@ -126,3 +131,14 @@ animation = &"down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_e08e2")
+
+[node name="Box" type="CharacterBody2D" parent="."]
+position = Vector2(128, 192)
+script = ExtResource("16_h1bgf")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Box"]
+texture = ExtResource("16_k12tt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+shape = SubResource("RectangleShape2D_h1bgf")

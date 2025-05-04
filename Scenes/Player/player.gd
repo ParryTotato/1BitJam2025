@@ -2,12 +2,30 @@ extends CharacterBody2D
 
 @export var speed = 150
 var last_direction = ""
+var is_pushing = false
+
+# Variables that can be increased via upgrades
+var push_force = 64
 
 func _physics_process(delta):
+	if is_pushing:
+		return
+		
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = input_dir.normalized() * speed
 	
-	# Animation Handling
+	movement_handling(input_dir)
+	var collision = move_and_collide(velocity * delta)
+	
+	if collision:
+		var node = collision.get_collider()
+		if node.has_method("push"):
+			var push_direction = velocity.normalized()
+			if node.push(push_direction * push_force * delta, self):
+				is_pushing = true
+				node.push_completed.connect(reset_push, CONNECT_ONE_SHOT)
+
+func movement_handling(input_dir: Vector2):
 	if input_dir.x > 0 and last_direction != "right":
 		$AnimatedSprite2D.play("right")
 		last_direction = "right"
@@ -24,12 +42,6 @@ func _physics_process(delta):
 		$AnimatedSprite2D.stop()
 		$AnimatedSprite2D.frame = 0
 		last_direction = "idle"
-	
-	move_and_slide()
-	
-	# Collision Handling
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		var node = collision.get_collider()
-		if node.has_method("push"):
-			node.push()
+
+func reset_push():
+	is_pushing = false

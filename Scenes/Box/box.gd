@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal push_completed
 
-var grid_size = 16
+var grid_size = 64
 var being_pushed = false
 
 func push(direction: Vector2, pusher: Node) -> bool:

@@ -442,6 +442,9 @@ horizontal_alignment = 1
 [node name="Coin" parent="." instance=ExtResource("4_imbg2")]
 position = Vector2(416, 288)
 
+[node name="Coin2" parent="." instance=ExtResource("4_imbg2")]
+position = Vector2(352, 288)
+
 [node name="Player" parent="." instance=ExtResource("5_hfg1r")]
 position = Vector2(96, 96)
 

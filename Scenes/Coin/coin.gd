@@ -27,5 +27,5 @@ func collect(body: Node2D):
 	#$Sprite.visible = false
 	#$Collision.set_deferred("disabled", true)
 	
-	Messenger.coin_added.emit()
+	Messenger.coin_collected.emit()
 	queue_free()

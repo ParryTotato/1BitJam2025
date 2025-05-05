@@ -1,7 +1,7 @@
 extends Node
 
 # Coin
-signal coin_added
+signal coin_collected
 
 # UpgradeShop
 signal timer_duration_upgraded

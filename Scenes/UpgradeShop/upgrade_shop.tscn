@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dsckpjthppqsx" path="res://Scenes/UpgradeShop/upgrade_shop.gd" id="1_407bl"]
 
-[node name="UpgradeUI" type="Control"]
+[node name="UpgradeShop" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,95 +18,70 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.101961, 0.109804, 0.117647, 1)
 
-[node name="CoinCount" type="Label" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -0.5
-offset_top = 30.0
-offset_right = 0.5
-offset_bottom = 53.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_bottom = 200
+
+[node name="CoinCount" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Coin Count: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="UpgradeButtons" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -68.5
-offset_top = -85.5
-offset_right = 68.5
-offset_bottom = 85.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="TimerUpgrade" type="Button" parent="UpgradeButtons"]
+[node name="TimerDuration" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Timer Upgrade"
 
-[node name="CoinMultiUpgrade" type="Button" parent="UpgradeButtons"]
+[node name="CoinMultiplier" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Coin Multiplier"
 
-[node name="KickUpgrade" type="Button" parent="UpgradeButtons"]
+[node name="Kick" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Kick Upgrade"
+text = "Kick
+"
 
-[node name="MagnetUpgrade" type="Button" parent="UpgradeButtons"]
+[node name="Magnet" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Magnet Upgrade"
+text = "Magnet
+"
 
-[node name="GunUpgrade" type="Button" parent="UpgradeButtons"]
+[node name="Translocator" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Gun Upgrade"
+text = "Translocator"
 
-[node name="PlayerStats" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -10.5
-offset_top = -52.0
-offset_right = 10.5
-offset_bottom = -29.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 20
-
-[node name="Timer" type="Label" parent="PlayerStats"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
+size_flags_horizontal = 4
+size_flags_vertical = 8
 
-[node name="CoinMulti" type="Label" parent="PlayerStats"]
+[node name="Refund" type="Button" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+text = "Refund
+"
 
-[node name="Kick" type="Label" parent="PlayerStats"]
+[node name="Continue" type="Button" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "Continue"
 
-[node name="Magnet" type="Label" parent="PlayerStats"]
-layout_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Gun" type="Label" parent="PlayerStats"]
-layout_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="pressed" from="UpgradeButtons/TimerUpgrade" to="." method="_on_timer_upgrade_pressed"]
-[connection signal="pressed" from="UpgradeButtons/CoinMultiUpgrade" to="." method="_on_coin_multi_upgrade_pressed"]
-[connection signal="pressed" from="UpgradeButtons/KickUpgrade" to="." method="_on_kick_upgrade_pressed"]
-[connection signal="pressed" from="UpgradeButtons/MagnetUpgrade" to="." method="_on_magnet_upgrade_pressed"]
-[connection signal="pressed" from="UpgradeButtons/GunUpgrade" to="." method="_on_gun_upgrade_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TimerDuration" to="." method="_on_timer_duration_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CoinMultiplier" to="." method="_on_coin_multiplier_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Kick" to="." method="_on_kick_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Magnet" to="." method="_on_magnet_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Translocator" to="." method="_on_translocator_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Refund" to="." method="_on_refund_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Continue" to="." method="_on_continue_pressed"]

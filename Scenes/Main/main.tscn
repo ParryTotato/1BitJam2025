@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dikh1o0j2gd5r" path="res://Scenes/Main/main.gd" id="1_xlvfx"]
 [ext_resource type="Texture2D" uid="uid://igcvfq056q7l" path="res://Assets/spr_walls.png" id="2_y3v7k"]
 [ext_resource type="Script" uid="uid://bi60grvgkf1q3" path="res://Scenes/timer.gd" id="3_hryqi"]
-[ext_resource type="PackedScene" uid="uid://bnva6bahaqsv3" path="res://Scenes/Coins/coin.tscn" id="4_imbg2"]
+[ext_resource type="PackedScene" uid="uid://bnva6bahaqsv3" path="res://Scenes/Coin/coin.tscn" id="4_imbg2"]
 [ext_resource type="PackedScene" uid="uid://b80me8jbqhh2t" path="res://Scenes/Player/player.tscn" id="5_hfg1r"]
 [ext_resource type="PackedScene" path="res://Scenes/Box/box.tscn" id="6_4e4y2"]
 [ext_resource type="PackedScene" uid="uid://ckphg4em2upsh" path="res://Scenes/UpgradeShop/upgrade_shop.tscn" id="7_6t3k2"]

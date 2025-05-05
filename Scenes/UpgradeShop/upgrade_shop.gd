@@ -12,7 +12,7 @@ var upgrades: Dictionary = {
 	"translocator": {"tier": 0, "cap": 1}
 }
 
-@onready var coin_count_label: Label = $MarginContainer/CoinCount
+@onready var coin_count_label: Label = $CoinCount
 
 
 func _ready() -> void:

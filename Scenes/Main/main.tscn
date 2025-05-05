@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bi60grvgkf1q3" path="res://Scenes/timer.gd" id="3_hryqi"]
 [ext_resource type="PackedScene" uid="uid://bnva6bahaqsv3" path="res://Scenes/Coin/coin.tscn" id="4_imbg2"]
 [ext_resource type="PackedScene" uid="uid://b80me8jbqhh2t" path="res://Scenes/Player/player.tscn" id="5_hfg1r"]
-[ext_resource type="PackedScene" path="res://Scenes/Box/box.tscn" id="6_4e4y2"]
+[ext_resource type="PackedScene" uid="uid://cjucuym23y50g" path="res://Scenes/Box/box.tscn" id="6_4e4y2"]
 [ext_resource type="PackedScene" uid="uid://ckphg4em2upsh" path="res://Scenes/UpgradeShop/upgrade_shop.tscn" id="7_6t3k2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1bgf"]
@@ -460,6 +460,7 @@ offset_right = 1280.0
 offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="UpgradeShop" parent="UI" instance=ExtResource("7_6t3k2")]
 visible = false

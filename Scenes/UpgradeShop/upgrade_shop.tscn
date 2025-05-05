@@ -10,6 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_407bl")
+metadata/_edit_lock_ = true
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -19,6 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.101961, 0.109804, 0.117647, 1)
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -29,6 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 200
 theme_override_constants/margin_bottom = 200
+metadata/_edit_lock_ = true
 
 [node name="CoinCount" type="Label" parent="MarginContainer"]
 layout_mode = 2
@@ -41,6 +44,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+metadata/_edit_group_ = true
 
 [node name="TimerDuration" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

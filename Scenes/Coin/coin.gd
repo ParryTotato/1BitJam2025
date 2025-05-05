@@ -19,7 +19,7 @@ func _ready():
 		#collect()
 
 
-func collect(body: Node2D):
+func collect(_body: Node2D):
 	#is_collected = true
 	# Maybe sound for picking up coin?
 	#GlobalGame.add_coins(coin_value)

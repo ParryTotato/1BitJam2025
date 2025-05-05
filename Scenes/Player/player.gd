@@ -35,6 +35,7 @@ func _physics_process(_delta):
 		var query = PhysicsRayQueryParameters2D.create(position, new_target, collision_mask, [self])
 		var result = space_state.intersect_ray(query)
 		
+		_play_move_animation(input_dir)
 		# No collision, move normally
 		if not result:
 			target_position = new_target
@@ -42,7 +43,6 @@ func _physics_process(_delta):
 			var tween = create_tween()
 			tween.tween_property(self, "position", target_position, move_speed)
 			tween.finished.connect(_on_move_complete)
-			_play_move_animation(input_dir)
 		# Collision, push time
 		elif result.collider.has_method("push"):
 			var push_direction = input_dir

@@ -1,7 +1,7 @@
 class_name UpgradeShop
 extends Control
 
-var coin_count: int = 2
+var coin_count: int = 50
 var coin_multiplier: int = 0
 
 var upgrades: Dictionary = {
@@ -33,6 +33,8 @@ func valid_purchase(type: String) -> bool:
 func purchase_upgrade(type: String) -> void:
 	coin_count -= upgrades[type]["cost"]
 	upgrades[type]["tier"] += 1
+	
+	print(type + " Tier: " + str(upgrades[type]["tier"]))
 	
 	update_label("CoinCount")
 

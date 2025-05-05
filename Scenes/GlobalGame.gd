@@ -1,11 +1,16 @@
 extends Node2D
 
-var coins := 0
-var upgradeTree = {
-	"coin_value": 1.0
+var coins: int = 0
+var upgradeTree: Dictionary = {
+	"timer_duration": 10,
+	"coin_multi": 1.0,
+	"kick": false,
+	"magnet": false,
+	"translocator": false
 }
 
-func add_coins(amount: int):
+
+func add_coins(amount: int) -> void:
 	coins += amount
 	print(coins)
 	# Add UI update

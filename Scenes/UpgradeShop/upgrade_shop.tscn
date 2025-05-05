@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_407bl")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="PlayerCoin" type="Label" parent="."]
+[node name="CoinCount" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -80,26 +80,27 @@ offset_right = 10.5
 offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 20
 
-[node name="PlayerTimer" type="Label" parent="PlayerStats"]
+[node name="Timer" type="Label" parent="PlayerStats"]
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CoinMultiUpgrade" type="Label" parent="PlayerStats"]
+[node name="CoinMulti" type="Label" parent="PlayerStats"]
 layout_mode = 2
 
-[node name="KickUpgrade" type="Label" parent="PlayerStats"]
-layout_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MagnetUpgrade" type="Label" parent="PlayerStats"]
+[node name="Kick" type="Label" parent="PlayerStats"]
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GunUpgrade" type="Label" parent="PlayerStats"]
+[node name="Magnet" type="Label" parent="PlayerStats"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gun" type="Label" parent="PlayerStats"]
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1

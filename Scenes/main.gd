@@ -3,6 +3,7 @@ extends Node2D
 @onready var timer := $Timer
 @onready var upgrade_shop = $UI/UpgradeShop
 
+
 func _ready():
 	timer.start_timer()
 

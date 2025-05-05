@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=4 uid="uid://bh8cpqp8e8p50"]
 
-[ext_resource type="Texture2D" uid="uid://bvanp8jmbq3hy" path="res://Assets/block_07.png" id="2_k12tt"]
+[ext_resource type="Texture2D" uid="uid://igcvfq056q7l" path="res://Assets/spr_walls.png" id="1_h1bgf"]
 [ext_resource type="Script" uid="uid://br67kajt5a2t3" path="res://Scenes/Player/player.gd" id="3_h1bgf"]
 [ext_resource type="Texture2D" uid="uid://die41uayksdc5" path="res://Assets/Player/player_05.png" id="4_b3802"]
 [ext_resource type="Texture2D" uid="uid://inum057lsm34" path="res://Assets/Player/player_06.png" id="5_fevyy"]
@@ -14,18 +14,39 @@
 [ext_resource type="Texture2D" uid="uid://cdu4ysdygax50" path="res://Assets/Player/player_08.png" id="13_1w6v2"]
 [ext_resource type="Texture2D" uid="uid://dxvmcdyrxth0j" path="res://Assets/Player/player_09.png" id="14_ueoa1"]
 [ext_resource type="Texture2D" uid="uid://dmowdr0bfdr84" path="res://Assets/Player/player_10.png" id="15_6vcvc"]
+[ext_resource type="Texture2D" uid="uid://cg4bfn5s2k0vt" path="res://Assets/spr_box.png" id="16_b3802"]
 [ext_resource type="Script" uid="uid://c2u310usqqs5n" path="res://Scenes/Box/box.gd" id="16_h1bgf"]
-[ext_resource type="Texture2D" uid="uid://yl7emk8tt66q" path="res://Assets/crate_42.png" id="16_k12tt"]
-[ext_resource type="Texture2D" uid="uid://dq13w0dbsf5j7" path="res://Assets/coin.png" id="18_b3802"]
+[ext_resource type="Texture2D" uid="uid://dx446357oelng" path="res://Assets/spr_coin.png" id="17_fevyy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1bgf"]
-texture = ExtResource("2_k12tt")
+texture = ExtResource("1_h1bgf")
+texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSet" id="TileSet_b3802"]
+tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_h1bgf")
+sources/1 = SubResource("TileSetAtlasSource_h1bgf")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b3802"]
+radius = 7.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kltya"]
 animations = [{
@@ -90,26 +111,33 @@ animations = [{
 size = Vector2(9, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1bgf"]
-size = Vector2(16, 15)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_b3802"]
-radius = 7.0
+size = Vector2(58, 58)
 
 [node name="Main" type="Node2D"]
 
 [node name="Background" type="ColorRect" parent="."]
-offset_right = 274.0
-offset_bottom = 272.0
+offset_right = 1280.0
+offset_bottom = 720.0
 color = Color(0.101961, 0.109804, 0.117647, 1)
 metadata/_edit_lock_ = true
 
-[node name="Wall" type="TileMapLayer" parent="."]
-use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA8AAAAAAAAAAAAAABAAAAAAAAAAAAABABAAAAAAAAAAAAACABAAAAAAAAAAAAADABAAAAAAAAAAAAAEABAAAAAAAAAAAAAFABAAAAAAAAAAAAAGABAAAAAAAAAAAAAHABAAAAAAAAAAAAAIABAAAAAAAAAAAAAJABAAAAAAAAAAAAAKABAAAAAAAAAAAAALABAAAAAAAAAAAAAMABAAAAAAAAAAAAANABAAAAAAAAAAAAAOABAAAAAAAAAAAAAPABAAAAAAAAAAAAAQABAAAAAAAAAAAAAQAA8AAAAAAAAAAAAQAA4AAAAAAAAAAAAQAA0AAAAAAAAAAAAQAAwAAAAAAAAAAAAQAAsAAAAAAAAAAAAQAAoAAAAAAAAAAAAQAAkAAAAAAAAAAAAQAAgAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAYAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAQAAAAAAAAAAAAQAAMAAAAAAAAAAAAQAAIAAAAAAAAAAAAQAAEAAAAAAAAAAAAQAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=")
+[node name="Walls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQABAAAAAAALAAAAAQABAAAAAAAMAAAAAQABAAAAAAANAAAAAQABAAAAAAAOAAAAAQABAAAAAAAPAAAAAQABAAAAAAAQAAAAAQABAAAAAAARAAAAAQABAAAAAAASAAAAAQABAAAAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAUAAQAAAAEAAAAAAAYAAQAAAAEAAAAAAAcAAQAAAAEAAAAAAAgAAQAAAAEAAAAAAAkAAQAAAAEAAAATAAEAAQACAAEAAAATAAIAAQACAAEAAAATAAMAAQACAAEAAAATAAQAAQACAAEAAAATAAUAAQACAAEAAAATAAYAAQACAAEAAAATAAcAAQACAAEAAAATAAgAAQACAAEAAAATAAkAAQACAAEAAAAAAAAAAQAAAAAAAAATAAAAAQACAAAAAAAAAAoAAQAAAAIAAAATAAoAAQACAAIAAAABAAoAAQABAAIAAAACAAoAAQABAAIAAAADAAoAAQABAAIAAAAEAAoAAQABAAIAAAAFAAoAAQABAAIAAAAGAAoAAQABAAIAAAAHAAoAAQABAAIAAAAIAAoAAQABAAIAAAAJAAoAAQABAAIAAAAKAAoAAQABAAIAAAALAAoAAQABAAIAAAAMAAoAAQABAAIAAAANAAoAAQABAAIAAAAOAAoAAQABAAIAAAAPAAoAAQABAAIAAAAQAAoAAQABAAIAAAARAAoAAQABAAIAAAASAAoAAQABAAIAAAAAAAsAAQABAAEAAAABAAsAAQABAAEAAAACAAsAAQABAAEAAAADAAsAAQABAAEAAAAEAAsAAQABAAEAAAAFAAsAAQABAAEAAAAGAAsAAQABAAEAAAAHAAsAAQABAAEAAAAIAAsAAQABAAEAAAAJAAsAAQABAAEAAAAKAAsAAQABAAEAAAALAAsAAQABAAEAAAAMAAsAAQABAAEAAAANAAsAAQABAAEAAAAOAAsAAQABAAEAAAAPAAsAAQABAAEAAAAQAAsAAQABAAEAAAARAAsAAQABAAEAAAASAAsAAQABAAEAAAATAAsAAQABAAEAAAA=")
 tile_set = SubResource("TileSet_b3802")
 
+[node name="Coin" type="Area2D" parent="."]
+position = Vector2(416, 288)
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Coin"]
+texture = ExtResource("17_fevyy")
+
+[node name="Collision" type="CollisionShape2D" parent="Coin"]
+shape = SubResource("CircleShape2D_b3802")
+
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(56, 56)
+position = Vector2(96, 96)
+scale = Vector2(4, 4)
 script = ExtResource("3_h1bgf")
 metadata/_edit_group_ = true
 
@@ -123,26 +151,15 @@ position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_e08e2")
 
 [node name="Box" type="CharacterBody2D" parent="."]
-position = Vector2(88, 88)
+position = Vector2(160, 160)
 script = ExtResource("16_h1bgf")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Box"]
-texture = ExtResource("16_k12tt")
+texture = ExtResource("16_b3802")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_h1bgf")
-
-[node name="Coin" type="Area2D" parent="."]
-position = Vector2(24, 24)
-metadata/_edit_group_ = true
-
-[node name="Sprite" type="Sprite2D" parent="Coin"]
-texture = ExtResource("18_b3802")
-
-[node name="Collision" type="CollisionShape2D" parent="Coin"]
-shape = SubResource("CircleShape2D_b3802")
 
 [node name="UpgradeUI" type="Control" parent="."]
 layout_mode = 3

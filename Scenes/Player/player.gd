@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var move_speed:= 0.2
 
 #Flags
-var grid_size := 16
+var grid_size := 64
 var is_moving = false
 var is_pushing = false
 var last_direction = "idle"

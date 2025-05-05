@@ -8,6 +8,7 @@ var timer_active := false
 @onready var timer_label := $Label
 
 func _ready():
+	start_timer()
 	update_display()
 	
 func _process(delta):

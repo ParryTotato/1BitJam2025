@@ -14,6 +14,7 @@ var push_force = 64
 
 func _ready():
 	target_position = position
+	#TODO: Apply player upgrades
 
 func _physics_process(_delta):
 	if is_moving or is_pushing:

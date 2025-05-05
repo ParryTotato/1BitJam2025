@@ -164,7 +164,7 @@ texture = ExtResource("17_fevyy")
 [node name="Collision" type="CollisionShape2D" parent="Coin"]
 shape = SubResource("CircleShape2D_b3802")
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(96, 96)
 scale = Vector2(4, 4)
 script = ExtResource("3_h1bgf")

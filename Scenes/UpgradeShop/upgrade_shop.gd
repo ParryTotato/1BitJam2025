@@ -19,4 +19,3 @@ func validate_coin_count() -> bool:
 		return true
 	 
 	return false
-	

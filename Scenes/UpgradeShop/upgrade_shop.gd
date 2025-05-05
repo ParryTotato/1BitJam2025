@@ -1,7 +1,7 @@
-class_name UpgradeUI
+class_name UpgradeShop
 extends Control
 
-var coin_count: int = 10
+var coin_count: int = GlobalGame.coins
 var timer_count: int = 4
 var coin_multi: int = 0
 var bought_kick: bool = false
@@ -29,6 +29,8 @@ func _process(delta: float) -> void:
 	
 	if bought_gun:
 		gun_label.text = "Bought Gun"
+		
+	coin_count = GlobalGame.coins
 
 
 func _on_timer_upgrade_pressed() -> void:
@@ -45,7 +47,7 @@ func _on_coin_multi_upgrade_pressed() -> void:
 
 func _on_kick_upgrade_pressed() -> void:
 	if validate_coin_count() and not bought_kick:
-		coin_count -= 2
+		coin_count -= 1
 		bought_kick = true
 
 

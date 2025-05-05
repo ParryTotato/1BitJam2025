@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckphg4em2upsh"]
+
+[ext_resource type="Script" uid="uid://dsckpjthppqsx" path="res://Scenes/UpgradeShop/upgrade_ui.gd" id="1_407bl"]
+
+[node name="UpgradeUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_407bl")
+
+[node name="CoinCount" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_right = 75.0
+offset_bottom = 107.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -85.5
+offset_right = 68.5
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimerUpgrade" type="Button" parent="UpgradeButtons"]
+layout_mode = 2
+text = "Timer Upgrade"
+
+[node name="CoinMultiUpgrade" type="Button" parent="UpgradeButtons"]
+layout_mode = 2
+text = "Coin Multiplier"
+
+[node name="KickUpgrade" type="Button" parent="UpgradeButtons"]
+layout_mode = 2
+text = "Kick Upgrade"
+
+[node name="MagnetUpgrade" type="Button" parent="UpgradeButtons"]
+layout_mode = 2
+text = "Magnet Upgrade"
+
+[node name="GunUpgrade" type="Button" parent="UpgradeButtons"]
+layout_mode = 2
+text = "Gun Upgrade"
+
+[connection signal="pressed" from="UpgradeButtons/TimerUpgrade" to="." method="_on_timer_upgrade_pressed"]
+[connection signal="pressed" from="UpgradeButtons/CoinMultiUpgrade" to="." method="_on_coin_multi_upgrade_pressed"]
+[connection signal="pressed" from="UpgradeButtons/KickUpgrade" to="." method="_on_kick_upgrade_pressed"]
+[connection signal="pressed" from="UpgradeButtons/MagnetUpgrade" to="." method="_on_magnet_upgrade_pressed"]
+[connection signal="pressed" from="UpgradeButtons/GunUpgrade" to="." method="_on_gun_upgrade_pressed"]

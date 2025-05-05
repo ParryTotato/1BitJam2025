@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://bh8cpqp8e8p50"]
+[gd_scene load_steps=9 format=4 uid="uid://bh8cpqp8e8p50"]
 
+[ext_resource type="Script" uid="uid://dikh1o0j2gd5r" path="res://Scenes/main.gd" id="1_21xkr"]
 [ext_resource type="Texture2D" uid="uid://igcvfq056q7l" path="res://Assets/spr_walls.png" id="1_h1bgf"]
 [ext_resource type="Script" uid="uid://bi60grvgkf1q3" path="res://Scenes/timer.gd" id="3_fevyy"]
 [ext_resource type="PackedScene" uid="uid://bnva6bahaqsv3" path="res://Scenes/Coins/coin.tscn" id="4_fevyy"]
@@ -398,6 +399,7 @@ terrain_set_0/terrain_0/color = Color(0, 0, 0, 1)
 sources/1 = SubResource("TileSetAtlasSource_h1bgf")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_21xkr")
 
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 1280.0

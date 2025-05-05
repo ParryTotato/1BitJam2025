@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var timer := $Timer
-
 var coins := 0
 var upgradeTree = {
 	"coin_value": 1.0

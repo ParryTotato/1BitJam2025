@@ -1,15 +1,15 @@
 [gd_scene load_steps=10 format=4 uid="uid://bh8cpqp8e8p50"]
 
-[ext_resource type="Script" uid="uid://dikh1o0j2gd5r" path="res://Scenes/main.gd" id="1_21xkr"]
-[ext_resource type="Texture2D" uid="uid://igcvfq056q7l" path="res://Assets/spr_walls.png" id="1_h1bgf"]
-[ext_resource type="Script" uid="uid://w50gfha4r5yj" path="res://Scenes/Level/level.gd" id="2_6bp64"]
-[ext_resource type="Script" uid="uid://bi60grvgkf1q3" path="res://Scenes/timer.gd" id="3_fevyy"]
-[ext_resource type="PackedScene" uid="uid://bnva6bahaqsv3" path="res://Scenes/Coins/coin.tscn" id="4_fevyy"]
-[ext_resource type="PackedScene" uid="uid://cmgas1j8ohwmm" path="res://Scenes/Player/player.tscn" id="5_21xkr"]
-[ext_resource type="PackedScene" uid="uid://cjucuym23y50g" path="res://Scenes/Box/box.tscn" id="6_6bp64"]
+[ext_resource type="Script" uid="uid://dikh1o0j2gd5r" path="res://Scenes/Main/main.gd" id="1_xlvfx"]
+[ext_resource type="Texture2D" uid="uid://igcvfq056q7l" path="res://Assets/spr_walls.png" id="2_y3v7k"]
+[ext_resource type="Script" uid="uid://bi60grvgkf1q3" path="res://Scenes/timer.gd" id="3_hryqi"]
+[ext_resource type="PackedScene" uid="uid://bnva6bahaqsv3" path="res://Scenes/Coin/coin.tscn" id="4_imbg2"]
+[ext_resource type="PackedScene" uid="uid://b80me8jbqhh2t" path="res://Scenes/Player/player.tscn" id="5_hfg1r"]
+[ext_resource type="PackedScene" path="res://Scenes/Box/box.tscn" id="6_4e4y2"]
+[ext_resource type="PackedScene" uid="uid://ckphg4em2upsh" path="res://Scenes/UpgradeShop/upgrade_shop.tscn" id="7_6t3k2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1bgf"]
-texture = ExtResource("1_h1bgf")
+texture = ExtResource("2_y3v7k")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -400,7 +400,7 @@ terrain_set_0/terrain_0/color = Color(0, 0, 0, 1)
 sources/1 = SubResource("TileSetAtlasSource_h1bgf")
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_21xkr")
+script = ExtResource("1_xlvfx")
 
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 1280.0
@@ -408,35 +408,15 @@ offset_bottom = 720.0
 color = Color(0.101961, 0.109804, 0.117647, 1)
 metadata/_edit_lock_ = true
 
-[node name="UpgradeUI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 56.0
-offset_bottom = 56.0
-
-[node name="Level" type="Node2D" parent="."]
-script = ExtResource("2_6bp64")
-
-[node name="Player" parent="Level" instance=ExtResource("5_21xkr")]
-position = Vector2(96, 96)
-
-[node name="Box" parent="Level" groups=["box"] instance=ExtResource("6_6bp64")]
-position = Vector2(160, 160)
-
-[node name="Coin" parent="Level" instance=ExtResource("4_fevyy")]
-position = Vector2(416, 288)
-
-[node name="Walls" type="TileMapLayer" parent="Level"]
+[node name="Walls" type="TileMapLayer" parent="."]
 position = Vector2(-1, 0)
-tile_map_data = PackedByteArray("AAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQABAAAAAAALAAAAAQABAAAAAAAMAAAAAQABAAAAAAANAAAAAQABAAAAAAAOAAAAAQAFAAoAAAAPAAAAAQABAAAAAAAQAAAAAQABAAAAAAARAAAAAQABAAAAAAASAAAAAQABAAAAAAATAAAAAQACAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAUAAQAAAAEAAAAAAAYAAQAAAAEAAAAAAAcAAQAAAAEAAAAAAAgAAQAAAAEAAAAAAAkAAQAAAAEAAAAAAAoAAQAAAAIAAAABAAoAAQABAAIAAAACAAoAAQABAAIAAAADAAoAAQABAAIAAAAEAAoAAQABAAIAAAAFAAoAAQABAAIAAAAGAAoAAQABAAIAAAAHAAoAAQABAAIAAAAIAAoAAQABAAIAAAAJAAoAAQABAAIAAAAKAAoAAQABAAIAAAALAAoAAQABAAIAAAAMAAoAAQABAAIAAAANAAoAAQABAAIAAAAOAAoAAQABAAIAAAAPAAoAAQABAAIAAAAQAAoAAQABAAIAAAARAAoAAQABAAIAAAASAAoAAQABAAIAAAATAAoAAQACAAIAAAATAAkAAQACAAEAAAATAAgAAQACAAAAAAATAAcAAQAHAAMAAAATAAYAAQAHAAMAAAATAAUAAQAHAAMAAAATAAQAAQACAAIAAAATAAMAAQACAAEAAAATAAIAAQACAAEAAAATAAEAAQACAAEAAAAOAAEAAQAHAAAAAAAOAAIAAQAEAAMAAAAPAAIAAQACAAQAAAAPAAMAAQAAAAIAAAAQAAMAAQACAAQAAAASAAQAAQAAAAQAAAAQAAQAAQACAAYAAAASAAUAAQACAAEAAAASAAYAAQACAAEAAAASAAcAAQACAAEAAAAPAAUAAQACAAYAAAAPAAQAAQAAAAAAAAAOAAUAAQAAAAYAAAAPAAcAAQABAAQAAAAOAAQAAQACAAEAAAAOAAMAAQAEAAkAAAANAAMAAQAHAAEAAAAMAAMAAQAAAAgAAAAMAAQAAQAHAAAAAAAMAAUAAQABAAYAAAAMAAcAAQABAAQAAAAMAAgAAQAAAAoAAAANAAgAAQAHAAEAAAAOAAgAAQAHAAEAAAAPAAgAAQABAAoAAAAQAAgAAQAHAAEAAAARAAgAAQAHAAEAAAASAAgAAQAFAAEAAAA=")
+tile_map_data = PackedByteArray("AAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQABAAAAAAALAAAAAQABAAAAAAAMAAAAAQABAAAAAAANAAAAAQABAAAAAAAOAAAAAQAFAAoAAAAPAAAAAQABAAAAAAAQAAAAAQABAAAAAAARAAAAAQABAAAAAAASAAAAAQABAAAAAAATAAAAAQACAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAUAAQAAAAEAAAAAAAYAAQAAAAEAAAAAAAcAAQAAAAEAAAAAAAgAAQAAAAEAAAAAAAkAAQAAAAEAAAAAAAoAAQAAAAIAAAABAAoAAQABAAIAAAACAAoAAQABAAIAAAADAAoAAQABAAIAAAAEAAoAAQABAAIAAAAFAAoAAQABAAIAAAAGAAoAAQABAAIAAAAHAAoAAQABAAIAAAAIAAoAAQABAAIAAAAJAAoAAQABAAIAAAAKAAoAAQABAAIAAAALAAoAAQABAAIAAAAMAAoAAQABAAIAAAANAAoAAQABAAIAAAAOAAoAAQABAAIAAAAPAAoAAQABAAIAAAAQAAoAAQABAAIAAAARAAoAAQABAAIAAAASAAoAAQABAAIAAAATAAoAAQACAAIAAAATAAkAAQACAAEAAAATAAgAAQACAAAAAAATAAcAAQAHAAMAAAATAAYAAQAHAAMAAAATAAUAAQAHAAMAAAATAAQAAQACAAIAAAATAAMAAQACAAEAAAATAAIAAQACAAEAAAATAAEAAQACAAEAAAAOAAEAAQAHAAAAAAAOAAIAAQAEAAMAAAAPAAIAAQACAAQAAAAPAAMAAQAAAAIAAAAQAAMAAQACAAQAAAASAAQAAQAAAAQAAAAQAAQAAQACAAYAAAASAAUAAQACAAEAAAASAAYAAQACAAEAAAASAAcAAQACAAEAAAAPAAUAAQACAAYAAAAPAAQAAQAAAAAAAAAOAAUAAQAAAAYAAAAPAAcAAQABAAQAAAAOAAQAAQACAAEAAAAOAAMAAQAEAAkAAAANAAMAAQAHAAEAAAAMAAMAAQAAAAgAAAAMAAQAAQAHAAAAAAAMAAUAAQABAAYAAAAMAAcAAQABAAQAAAAMAAgAAQAAAAoAAAANAAgAAQAHAAEAAAAOAAgAAQAHAAEAAAAPAAgAAQABAAoAAAAQAAgAAQAHAAEAAAARAAgAAQAHAAEAAAASAAgAAQAFAAEAAAAKAAgAAQACAAUAAAAJAAgAAQAAAAoAAAAJAAcAAQABAAQAAAAHAAgAAQABAAYAAAAHAAcAAQABAAQAAAA=")
 tile_set = SubResource("TileSet_b3802")
 
-[node name="Timer" type="CanvasLayer" parent="Level"]
-script = ExtResource("3_fevyy")
+[node name="Timer" type="CanvasLayer" parent="."]
+script = ExtResource("3_hryqi")
 
-[node name="ColorRect" type="ColorRect" parent="Level/Timer"]
+[node name="ColorRect" type="ColorRect" parent="Timer"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -447,7 +427,7 @@ offset_bottom = 30.0
 grow_horizontal = 2
 color = Color(0.101961, 0.109804, 0.117647, 1)
 
-[node name="Label" type="Label" parent="Level/Timer"]
+[node name="Label" type="Label" parent="Timer"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -458,3 +438,30 @@ offset_bottom = 30.0
 grow_horizontal = 2
 text = "0:30"
 horizontal_alignment = 1
+
+[node name="Coin" parent="." instance=ExtResource("4_imbg2")]
+position = Vector2(416, 288)
+
+[node name="Coin2" parent="." instance=ExtResource("4_imbg2")]
+position = Vector2(352, 288)
+
+[node name="Player" parent="." instance=ExtResource("5_hfg1r")]
+position = Vector2(96, 96)
+
+[node name="Box" parent="." groups=["box"] instance=ExtResource("6_4e4y2")]
+position = Vector2(160, 160)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="UpgradeShop" parent="UI" instance=ExtResource("7_6t3k2")]
+visible = false
+layout_mode = 1

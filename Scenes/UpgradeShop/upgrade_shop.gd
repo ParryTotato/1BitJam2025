@@ -3,8 +3,8 @@ extends Control
 
 var coin_count: int = 50
 var coin_spent: int = 0
-var coin_multiplier: int = 1
-var coin_mult_per_upgrade_tier: int = 1
+var coin_multiplier: int = 0
+var coin_mult_per_upgrade_tier: int = 2
 var cost_mult_per_upgrade_tier: int = 2
 
 var upgrades_default: Dictionary = {
@@ -34,12 +34,12 @@ func _ready() -> void:
 	
 
 func valid_purchase(type: String) -> bool:
-	if coin_count < upgrades[type]["cost"]:
-		print("Not enough coins")
-		return false
-	
 	if upgrades[type]["tier"] == upgrades[type]["cap"]:
 		print("Upgrade is capped")
+		return false
+	
+	if coin_count < upgrades[type]["cost"]:
+		print("Not enough coins")
 		return false
 	
 	return true
@@ -53,7 +53,7 @@ func purchase_upgrade(type: String) -> void:
 	
 	if upgrades[type]["tier"] == upgrades[type]["cap"]:
 		#TODO: Find better way to signify max upgrade level
-		upgrades[type]["cost"] = NAN
+		upgrades[type]["cost"] = "0"
 	else:
 		upgrades[type]["cost"] *= cost_mult_per_upgrade_tier
 	
@@ -135,6 +135,9 @@ func _on_continue_pressed() -> void:
 
 
 func _on_coin_collected() -> void:
-	coin_count += 1 * coin_multiplier
+	if coin_multiplier:
+		coin_count += 1 * coin_multiplier
+	else:
+		coin_count += 1
 		
 	update_labels()

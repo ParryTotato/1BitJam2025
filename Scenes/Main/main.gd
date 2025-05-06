@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var timer := $Timer
+@onready var timer := $TimerLabel
 @onready var upgrade_shop = $UI/UpgradeShop
 
 

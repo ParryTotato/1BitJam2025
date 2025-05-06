@@ -445,28 +445,23 @@ position = Vector2(96, 96)
 [node name="Box" parent="Level" groups=["box"] instance=ExtResource("6_4e4y2")]
 position = Vector2(160, 160)
 
-[node name="CoinCount" type="CanvasLayer" parent="."]
-script = ExtResource("7_imbg2")
-
-[node name="Label" type="Label" parent="CoinCount"]
+[node name="CoinCountLabel" type="Label" parent="."]
 offset_left = 359.0
 offset_top = 10.0
 offset_right = 530.0
 offset_bottom = 37.0
 text = "Coin Count: 0"
 label_settings = SubResource("LabelSettings_imbg2")
+script = ExtResource("7_imbg2")
 
-[node name="Timer" type="CanvasLayer" parent="."]
-script = ExtResource("3_hryqi")
-
-[node name="Label" type="Label" parent="Timer"]
+[node name="TimerLabel" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -19.0
+offset_left = 612.5
 offset_top = 11.0
-offset_right = 21.0
-offset_bottom = 34.0
+offset_right = 669.5
+offset_bottom = 38.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.737255, 0.737255, 0.737255, 1)
 theme_override_colors/font_outline_color = Color(0.101961, 0.109804, 0.117647, 1)
@@ -474,6 +469,7 @@ theme_override_fonts/font = ExtResource("8_hryqi")
 text = "0:30"
 label_settings = SubResource("LabelSettings_hryqi")
 horizontal_alignment = 1
+script = ExtResource("3_hryqi")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

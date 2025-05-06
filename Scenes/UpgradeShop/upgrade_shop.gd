@@ -52,7 +52,6 @@ func purchase_upgrade(type: String) -> void:
 	upgrades[type]["tier"] += 1
 	
 	if upgrades[type]["tier"] == upgrades[type]["cap"]:
-		#TODO: Find better way to signify max upgrade level
 		upgrades[type]["cost"] = "0"
 	else:
 		upgrades[type]["cost"] *= cost_mult_per_upgrade_tier

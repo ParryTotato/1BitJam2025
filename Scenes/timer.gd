@@ -1,6 +1,6 @@
 extends Label
 
-@export var initial_time: float = 30.0
+@export var initial_time: float = 5.0
 
 var time_left: float = initial_time
 var timer_active := false
@@ -29,4 +29,5 @@ func pause_timer():
 func timer_ended():
 	timer_active = false
 	text = "0:00"
+	Messenger.timer_ended.emit()
 	#TODO: Add game over logic

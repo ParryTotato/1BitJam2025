@@ -5,7 +5,7 @@ func _ready() -> void:
 	Messenger.coin_count_updated.connect(_on_coin_count_updated)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
 

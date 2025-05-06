@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalGame="*res://Scenes/GlobalGame.gd"
 Messenger="*res://messenger.gd"
 
 [debug]

@@ -19,7 +19,7 @@ func _ready():
 		#collect()
 
 
-func collect(body: Node2D):
+func collect(_body: Node2D):
 	#is_collected = true
 	# Maybe sound for picking up coin?
 	#GlobalGame.add_coins(coin_value)
@@ -27,5 +27,5 @@ func collect(body: Node2D):
 	#$Sprite.visible = false
 	#$Collision.set_deferred("disabled", true)
 	
-	Messenger.coin_added.emit()
+	Messenger.coin_collected.emit()
 	queue_free()

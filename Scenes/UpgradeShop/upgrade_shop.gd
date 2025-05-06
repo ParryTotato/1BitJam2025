@@ -7,7 +7,7 @@ var coin_multiplier: int = 1
 var coin_mult_per_upgrade_tier: int = 1
 var cost_mult_per_upgrade_tier: int = 2
 
-var default_upgrade_values: Dictionary = {
+var upgrades_default: Dictionary = {
 	"TimerDuration": {"tier": 0, "cap": 10, "cost": 2},
 	"CoinMultiplier": {"tier": 0, "cap": 10, "cost": 2},
 	"Kick": {"tier": 0, "cap": 1, "cost": 10},
@@ -25,8 +25,8 @@ var upgrades: Dictionary = {
 
 
 func _ready() -> void:	
-	for key in default_upgrade_values.keys():
-		upgrades[key] = default_upgrade_values[key].duplicate(true)
+	for key in upgrades_default.keys():
+		upgrades[key] = upgrades_default[key].duplicate(true)
 
 	update_labels()
 
@@ -121,8 +121,8 @@ func _on_refund_pressed() -> void:
 	coin_count += coin_spent
 	coin_spent = 0
 	
-	for key in default_upgrade_values.keys():
-		upgrades[key] = default_upgrade_values[key].duplicate(true)
+	for key in upgrades_default.keys():
+		upgrades[key] = upgrades_default[key].duplicate(true)
 	
 	update_labels()
 	

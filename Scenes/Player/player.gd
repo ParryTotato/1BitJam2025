@@ -8,12 +8,14 @@ var is_moving = false
 var is_pushing = false
 var last_direction = "idle"
 var target_position : Vector2
+var starting_position : Vector2
 
 # Variables that can be increased via upgrades
 var push_force = 64
 
 func _ready():
-	target_position = position
+	starting_position = position
+	reset_player()
 	#TODO: Apply player upgrades
 
 func _physics_process(_delta):
@@ -74,3 +76,8 @@ func _on_move_complete():
 
 func _on_push_complete():
 	is_pushing = false
+
+func reset_player():
+	position = starting_position
+	target_position = starting_position
+	is_moving = false

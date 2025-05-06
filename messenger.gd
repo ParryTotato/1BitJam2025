@@ -9,3 +9,4 @@ signal kick_upgraded
 signal magnet_upgraded
 signal translocator_upgraded
 signal upgrades_refunded
+signal coin_count_updated

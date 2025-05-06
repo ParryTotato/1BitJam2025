@@ -1,7 +1,7 @@
 class_name UpgradeShop
 extends Control
 
-var coin_count: int = 50
+var coin_count: int = 0
 var coin_spent: int = 0
 var coin_multiplier: int = 0
 var coin_mult_per_upgrade_tier: int = 2
@@ -59,6 +59,8 @@ func purchase_upgrade(type: String) -> void:
 	print(type + " Tier: " + str(upgrades[type]["tier"]))
 	
 	update_labels()
+
+	Messenger.coin_count_updated.emit(coin_count)
 
 
 func update_labels() -> void:
@@ -125,7 +127,9 @@ func _on_refund_pressed() -> void:
 	
 	update_labels()
 	
-	Messenger.emit_signal("upgrades_refunded")
+	Messenger.upgrades_refunded.emit()
+	
+	Messenger.coin_count_updated.emit(coin_count)
 	
 
 func _on_continue_pressed() -> void:
@@ -140,3 +144,5 @@ func _on_coin_collected() -> void:
 		coin_count += 1
 		
 	update_labels()
+
+	Messenger.coin_count_updated.emit(coin_count)

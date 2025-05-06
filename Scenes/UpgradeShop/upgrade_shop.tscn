@@ -59,7 +59,7 @@ texture_normal = ExtResource("4_ynwtr")
 texture_pressed = ExtResource("5_od0mr")
 texture_hover = ExtResource("6_u7bp5")
 
-[node name="Price" type="Label" parent="VBoxContainer/TimerDuration"]
+[node name="TDPrice" type="Label" parent="VBoxContainer/TimerDuration"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 12.0
@@ -71,7 +71,7 @@ theme_override_font_sizes/font_size = 24
 text = "1"
 horizontal_alignment = 1
 
-[node name="UpgradeCount" type="Label" parent="VBoxContainer/TimerDuration"]
+[node name="TDTier" type="Label" parent="VBoxContainer/TimerDuration"]
 layout_mode = 0
 offset_left = -58.0
 offset_top = 16.0
@@ -89,11 +89,55 @@ texture_normal = ExtResource("4_ynwtr")
 texture_pressed = ExtResource("5_od0mr")
 texture_hover = ExtResource("6_u7bp5")
 
+[node name="CMPrice" type="Label" parent="VBoxContainer/CoinMultiplier"]
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 45.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.101961, 0.109804, 0.117647, 1)
+theme_override_fonts/font = ExtResource("2_3au0v")
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="CMTier" type="Label" parent="VBoxContainer/CoinMultiplier"]
+offset_left = -58.0
+offset_top = 16.0
+offset_right = 3.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.737255, 0.737255, 0.737255, 1)
+theme_override_fonts/font = ExtResource("2_3au0v")
+theme_override_font_sizes/font_size = 16
+text = "0/10"
+horizontal_alignment = 1
+
 [node name="Kick" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_ynwtr")
 texture_pressed = ExtResource("5_od0mr")
 texture_hover = ExtResource("6_u7bp5")
+
+[node name="KickPrice" type="Label" parent="VBoxContainer/Kick"]
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 45.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.101961, 0.109804, 0.117647, 1)
+theme_override_fonts/font = ExtResource("2_3au0v")
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="KickTier" type="Label" parent="VBoxContainer/Kick"]
+offset_left = -58.0
+offset_top = 16.0
+offset_right = 3.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.737255, 0.737255, 0.737255, 1)
+theme_override_fonts/font = ExtResource("2_3au0v")
+theme_override_font_sizes/font_size = 16
+text = "0/10"
+horizontal_alignment = 1
 
 [node name="Magnet" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
@@ -101,11 +145,55 @@ texture_normal = ExtResource("4_ynwtr")
 texture_pressed = ExtResource("5_od0mr")
 texture_hover = ExtResource("6_u7bp5")
 
+[node name="MagnetPrice" type="Label" parent="VBoxContainer/Magnet"]
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 45.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.101961, 0.109804, 0.117647, 1)
+theme_override_fonts/font = ExtResource("2_3au0v")
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="MagnetTier" type="Label" parent="VBoxContainer/Magnet"]
+offset_left = -58.0
+offset_top = 16.0
+offset_right = 3.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.737255, 0.737255, 0.737255, 1)
+theme_override_fonts/font = ExtResource("2_3au0v")
+theme_override_font_sizes/font_size = 16
+text = "0/10"
+horizontal_alignment = 1
+
 [node name="Translocator" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_ynwtr")
 texture_pressed = ExtResource("5_od0mr")
 texture_hover = ExtResource("6_u7bp5")
+
+[node name="TransPrice" type="Label" parent="VBoxContainer/Translocator"]
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 45.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.101961, 0.109804, 0.117647, 1)
+theme_override_fonts/font = ExtResource("2_3au0v")
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="TransTier" type="Label" parent="VBoxContainer/Translocator"]
+offset_left = -58.0
+offset_top = 16.0
+offset_right = 3.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.737255, 0.737255, 0.737255, 1)
+theme_override_fonts/font = ExtResource("2_3au0v")
+theme_override_font_sizes/font_size = 16
+text = "0/10"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2

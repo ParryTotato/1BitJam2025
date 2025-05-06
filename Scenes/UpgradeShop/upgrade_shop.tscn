@@ -1,91 +1,140 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckphg4em2upsh"]
+[gd_scene load_steps=13 format=3 uid="uid://ckphg4em2upsh"]
 
 [ext_resource type="Script" uid="uid://dsckpjthppqsx" path="res://Scenes/UpgradeShop/upgrade_shop.gd" id="1_407bl"]
+[ext_resource type="Texture2D" uid="uid://bulmdtqmcrb4q" path="res://Assets/upgrade screen back.png" id="2_0w830"]
+[ext_resource type="FontFile" uid="uid://ba7dpcyndctpw" path="res://Assets/FuturaND-Bold.otf" id="2_3au0v"]
+[ext_resource type="Texture2D" uid="uid://f4bq3pumhco3" path="res://Assets/btn_shop_normal.png" id="4_ynwtr"]
+[ext_resource type="Texture2D" uid="uid://dc7yje16gfpgo" path="res://Assets/btn_shop_pressed.png" id="5_od0mr"]
+[ext_resource type="Texture2D" uid="uid://0lqfuxg4uaph" path="res://Assets/btn_shop_hovered.png" id="6_u7bp5"]
+[ext_resource type="Texture2D" uid="uid://cxedg30ym0md6" path="res://Assets/btn_reset.png" id="7_fdw8k"]
+[ext_resource type="Texture2D" uid="uid://d2ieoxdchhr" path="res://Assets/btn_reset_pressed.png" id="8_thj3q"]
+[ext_resource type="Texture2D" uid="uid://b0xq3gcnqgo16" path="res://Assets/btn_reset_hovered.png" id="9_o0leb"]
+[ext_resource type="Texture2D" uid="uid://brio6fyoshhsy" path="res://Assets/btn_continue.png" id="10_sfqks"]
+[ext_resource type="Texture2D" uid="uid://c86udavrvjk1y" path="res://Assets/btn_continue_pressed.png" id="11_n3s3v"]
+[ext_resource type="Texture2D" uid="uid://cm0xhtk4vr4bi" path="res://Assets/btn_continue_hovered.png" id="12_g2afw"]
 
 [node name="UpgradeShop" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_407bl")
-metadata/_edit_lock_ = true
 
-[node name="Background" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.101961, 0.109804, 0.117647, 1)
-metadata/_edit_lock_ = true
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("2_0w830")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_top = 200
-theme_override_constants/margin_bottom = 200
-metadata/_edit_lock_ = true
-
-[node name="CoinCount" type="Label" parent="MarginContainer"]
+[node name="CoinCount" type="Label" parent="."]
 layout_mode = 2
+offset_left = 462.0
+offset_top = 141.0
+offset_right = 633.0
+offset_bottom = 168.0
+size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Coin Count: 0"
-horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.737255, 0.737255, 0.737255, 1)
+theme_override_fonts/font = ExtResource("2_3au0v")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 812.0
+offset_top = 216.0
+offset_right = 900.0
+offset_bottom = 472.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-metadata/_edit_group_ = true
+theme_override_constants/separation = 28
 
-[node name="TimerDuration" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="TimerDuration" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-text = "Timer Upgrade"
+texture_normal = ExtResource("4_ynwtr")
+texture_pressed = ExtResource("5_od0mr")
+texture_hover = ExtResource("6_u7bp5")
 
-[node name="CoinMultiplier" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Coin Multiplier"
+[node name="Price" type="Label" parent="VBoxContainer/TimerDuration"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 45.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.101961, 0.109804, 0.117647, 1)
+theme_override_fonts/font = ExtResource("2_3au0v")
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
 
-[node name="Kick" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Kick
-"
+[node name="UpgradeCount" type="Label" parent="VBoxContainer/TimerDuration"]
+layout_mode = 0
+offset_left = -58.0
+offset_top = 16.0
+offset_right = 3.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.737255, 0.737255, 0.737255, 1)
+theme_override_fonts/font = ExtResource("2_3au0v")
+theme_override_font_sizes/font_size = 16
+text = "0/10"
+horizontal_alignment = 1
 
-[node name="Magnet" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="CoinMultiplier" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-text = "Magnet
-"
+texture_normal = ExtResource("4_ynwtr")
+texture_pressed = ExtResource("5_od0mr")
+texture_hover = ExtResource("6_u7bp5")
 
-[node name="Translocator" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Kick" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-text = "Translocator"
+texture_normal = ExtResource("4_ynwtr")
+texture_pressed = ExtResource("5_od0mr")
+texture_hover = ExtResource("6_u7bp5")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="Magnet" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("4_ynwtr")
+texture_pressed = ExtResource("5_od0mr")
+texture_hover = ExtResource("6_u7bp5")
+
+[node name="Translocator" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_ynwtr")
+texture_pressed = ExtResource("5_od0mr")
+texture_hover = ExtResource("6_u7bp5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 370.0
+offset_top = 613.0
+offset_right = 902.0
+offset_bottom = 683.0
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme_override_constants/separation = 16
 
-[node name="Refund" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="Refund" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
-text = "Refund
-"
+texture_normal = ExtResource("7_fdw8k")
+texture_pressed = ExtResource("8_thj3q")
+texture_hover = ExtResource("9_o0leb")
 
-[node name="Continue" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="Continue" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
-text = "Continue"
+texture_normal = ExtResource("10_sfqks")
+texture_pressed = ExtResource("11_n3s3v")
+texture_hover = ExtResource("12_g2afw")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/TimerDuration" to="." method="_on_timer_duration_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/CoinMultiplier" to="." method="_on_coin_multiplier_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Kick" to="." method="_on_kick_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Magnet" to="." method="_on_magnet_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Translocator" to="." method="_on_translocator_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Refund" to="." method="_on_refund_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/TimerDuration" to="." method="_on_timer_duration_pressed"]
+[connection signal="pressed" from="VBoxContainer/CoinMultiplier" to="." method="_on_coin_multiplier_pressed"]
+[connection signal="pressed" from="VBoxContainer/Kick" to="." method="_on_kick_pressed"]
+[connection signal="pressed" from="VBoxContainer/Magnet" to="." method="_on_magnet_pressed"]
+[connection signal="pressed" from="VBoxContainer/Translocator" to="." method="_on_translocator_pressed"]
+[connection signal="pressed" from="HBoxContainer/Refund" to="." method="_on_refund_pressed"]
+[connection signal="pressed" from="HBoxContainer/Continue" to="." method="_on_continue_pressed"]

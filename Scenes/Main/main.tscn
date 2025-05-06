@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bh8cpqp8e8p50"]
+[gd_scene load_steps=15 format=4 uid="uid://bh8cpqp8e8p50"]
 
 [ext_resource type="Script" uid="uid://dikh1o0j2gd5r" path="res://Scenes/Main/main.gd" id="1_xlvfx"]
 [ext_resource type="Texture2D" uid="uid://igcvfq056q7l" path="res://Assets/spr_walls.png" id="2_y3v7k"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://w50gfha4r5yj" path="res://Scenes/Level/level.gd" id="5_y3v7k"]
 [ext_resource type="PackedScene" uid="uid://cjucuym23y50g" path="res://Scenes/Box/box.tscn" id="6_4e4y2"]
 [ext_resource type="PackedScene" uid="uid://ckphg4em2upsh" path="res://Scenes/UpgradeShop/upgrade_shop.tscn" id="7_6t3k2"]
+[ext_resource type="Script" uid="uid://d24ipw3jvtda6" path="res://Scenes/Coin/coin_count.gd" id="7_imbg2"]
 [ext_resource type="FontFile" uid="uid://ba7dpcyndctpw" path="res://Assets/FuturaND-Bold.otf" id="8_hryqi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1bgf"]
@@ -401,9 +402,17 @@ terrain_set_0/terrain_0/name = "Walls"
 terrain_set_0/terrain_0/color = Color(0, 0, 0, 1)
 sources/1 = SubResource("TileSetAtlasSource_h1bgf")
 
+[sub_resource type="LabelSettings" id="LabelSettings_imbg2"]
+font = ExtResource("8_hryqi")
+font_size = 24
+font_color = Color(0.737255, 0.737255, 0.737255, 1)
+outline_size = 8
+outline_color = Color(0.101961, 0.109804, 0.117647, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_hryqi"]
 font = ExtResource("8_hryqi")
 font_size = 24
+font_color = Color(0.737255, 0.737255, 0.737255, 1)
 outline_size = 8
 outline_color = Color(0.101961, 0.109804, 0.117647, 1)
 
@@ -436,6 +445,17 @@ position = Vector2(96, 96)
 [node name="Box" parent="Level" groups=["box"] instance=ExtResource("6_4e4y2")]
 position = Vector2(160, 160)
 
+[node name="CoinCount" type="CanvasLayer" parent="."]
+script = ExtResource("7_imbg2")
+
+[node name="Label" type="Label" parent="CoinCount"]
+offset_left = 359.0
+offset_top = 10.0
+offset_right = 530.0
+offset_bottom = 37.0
+text = "Coin Count: 0"
+label_settings = SubResource("LabelSettings_imbg2")
+
 [node name="Timer" type="CanvasLayer" parent="."]
 script = ExtResource("3_hryqi")
 
@@ -454,18 +474,6 @@ theme_override_fonts/font = ExtResource("8_hryqi")
 text = "0:30"
 label_settings = SubResource("LabelSettings_hryqi")
 horizontal_alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="Timer"]
-visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 7.0
-offset_right = 20.0
-offset_bottom = 30.0
-grow_horizontal = 2
-color = Color(0.101961, 0.109804, 0.117647, 1)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

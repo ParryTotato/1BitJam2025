@@ -4,7 +4,6 @@ var original_positions := {}
 
 func _ready():
 	_register_objects()
-	print(original_positions)
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("reset"):
@@ -24,7 +23,6 @@ func reset_level():
 	set_physics_process(false)
 	for child in get_children():
 		if child.name in original_positions:
-			print(child.name)
 			child.position = original_positions[child.name]
 			
 			if child.has_method("reset_player"):

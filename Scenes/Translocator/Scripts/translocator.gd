@@ -1,0 +1,2 @@
+class_name Translocator
+extends Sprite2D

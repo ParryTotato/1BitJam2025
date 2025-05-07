@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c32gh7vy38dm8"]
+
+[ext_resource type="Texture2D" uid="uid://4te8bc36c46d" path="res://Scenes/Translocator/Assets/Art/spr_translocator.png" id="1_nbc01"]
+[ext_resource type="Script" uid="uid://2fb87o0m6yr7" path="res://Scenes/Translocator/Scripts/translocator.gd" id="2_3lp2v"]
+
+[node name="Translocator" type="Sprite2D"]
+texture = ExtResource("1_nbc01")
+script = ExtResource("2_3lp2v")

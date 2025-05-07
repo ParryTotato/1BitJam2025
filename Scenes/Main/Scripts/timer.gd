@@ -1,6 +1,6 @@
 extends Label
 
-@export var initial_time: float = 3.0
+@export var initial_time: float = 30.0
 
 
 var time_left: float = initial_time

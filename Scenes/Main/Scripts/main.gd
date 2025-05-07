@@ -10,12 +10,12 @@ func _ready():
 	#Messenger.game_continued.connect( put callback here )
 
 
-#func _unhandled_input(event: InputEvent) -> void:
-#	if event.is_action_pressed("ui_accept"):
-#		upgrade_shop.visible = true
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		upgrade_shop.visible = true
 
-#	if event.is_action_pressed("ui_cancel"):
-#		upgrade_shop.visible = false
+	if event.is_action_pressed("ui_cancel"):
+		upgrade_shop.visible = false
 		
 func _on_timer_ended():
 	upgrade_shop.visible = true

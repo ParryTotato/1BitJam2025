@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bphur3n006src"
-path="res://.godot/imported/upgrade screen mockup.png-bfbe80e68d686932228bb18f6462a560.ctex"
+uid="uid://cxedg30ym0md6"
+path="res://.godot/imported/btn_reset.png-119970c5beb1c5e5e75104a0facecada.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/upgrade screen mockup.png"
-dest_files=["res://.godot/imported/upgrade screen mockup.png-bfbe80e68d686932228bb18f6462a560.ctex"]
+source_file="res://Scenes/UpgradeShop/Assets/Art/btn_reset.png"
+dest_files=["res://.godot/imported/btn_reset.png-119970c5beb1c5e5e75104a0facecada.ctex"]
 
 [params]
 

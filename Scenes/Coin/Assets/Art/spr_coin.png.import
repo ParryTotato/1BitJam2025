@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1g3pd5dv3ioi"
-path="res://.godot/imported/btn_timer_increase.png-bf3924224a49c32258d8c576eabdf588.ctex"
+uid="uid://dx446357oelng"
+path="res://.godot/imported/spr_coin.png-9190a54e8c2ff44f8921f9d2c577f6ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/btn_timer_increase.png"
-dest_files=["res://.godot/imported/btn_timer_increase.png-bf3924224a49c32258d8c576eabdf588.ctex"]
+source_file="res://Scenes/Coin/Assets/Art/spr_coin.png"
+dest_files=["res://.godot/imported/spr_coin.png-9190a54e8c2ff44f8921f9d2c577f6ac.ctex"]
 
 [params]
 

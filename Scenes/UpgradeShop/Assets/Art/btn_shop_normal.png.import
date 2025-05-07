@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bulmdtqmcrb4q"
-path="res://.godot/imported/upgrade screen back.png-86f7d83beb9bab29502f874666cbe81d.ctex"
+uid="uid://f4bq3pumhco3"
+path="res://.godot/imported/btn_shop_normal.png-c58fd42b8569b4cf7deefd1a0a78071b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/upgrade screen back.png"
-dest_files=["res://.godot/imported/upgrade screen back.png-86f7d83beb9bab29502f874666cbe81d.ctex"]
+source_file="res://Scenes/UpgradeShop/Assets/Art/btn_shop_normal.png"
+dest_files=["res://.godot/imported/btn_shop_normal.png-c58fd42b8569b4cf7deefd1a0a78071b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f4bq3pumhco3"
-path="res://.godot/imported/btn_shop_normal.png-848e63867a5ba3e4b845e237b2da8e3a.ctex"
+uid="uid://brio6fyoshhsy"
+path="res://.godot/imported/btn_continue.png-0b07ba99a82a07ba9d74be9a614cb3d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/btn_shop_normal.png"
-dest_files=["res://.godot/imported/btn_shop_normal.png-848e63867a5ba3e4b845e237b2da8e3a.ctex"]
+source_file="res://Scenes/UpgradeShop/Assets/Art/btn_continue.png"
+dest_files=["res://.godot/imported/btn_continue.png-0b07ba99a82a07ba9d74be9a614cb3d4.ctex"]
 
 [params]
 

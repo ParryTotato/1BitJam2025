@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq13w0dbsf5j7"
-path="res://.godot/imported/coin.png-23e506fc535e1e81a67b247520f1351a.ctex"
+uid="uid://dvucv6aq1vxuw"
+path="res://.godot/imported/btn_translocator.png-1ed2120d73a4fa75ec604f3535d8fcb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/coin.png"
-dest_files=["res://.godot/imported/coin.png-23e506fc535e1e81a67b247520f1351a.ctex"]
+source_file="res://Scenes/UpgradeShop/Assets/Art/btn_translocator.png"
+dest_files=["res://.godot/imported/btn_translocator.png-1ed2120d73a4fa75ec604f3535d8fcb5.ctex"]
 
 [params]
 

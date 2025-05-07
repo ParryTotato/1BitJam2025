@@ -148,3 +148,7 @@ func _on_coin_collected() -> void:
 	update_labels()
 
 	Messenger.coin_count_updated.emit(coin_count)
+
+
+func _on_timer_duration_timeout() -> void:
+	visible = true

@@ -12,6 +12,3 @@ signal upgrades_refunded
 signal coin_count_updated
 signal game_continued
 signal upgrades_verified
-
-# Timer
-signal 	timer_ended

@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://ckphg4em2upsh"]
 
 [ext_resource type="Script" uid="uid://dsckpjthppqsx" path="res://Scenes/UpgradeShop/Scripts/upgrade_shop.gd" id="1_407bl"]
-[ext_resource type="Texture2D" uid="uid://bulmdtqmcrb4q" path="res://Scenes/UpgradeShop/Assets/Art/upgrade screen back.png" id="2_0w830"]
+[ext_resource type="Texture2D" uid="uid://bonrsl0co3i0t" path="res://Scenes/UpgradeShop/Assets/Art/upgrade_screen_back.png" id="2_0w830"]
 [ext_resource type="FontFile" uid="uid://ba7dpcyndctpw" path="res://Assets/FuturaND-Bold.otf" id="2_3au0v"]
 [ext_resource type="Texture2D" uid="uid://f4bq3pumhco3" path="res://Scenes/UpgradeShop/Assets/Art/btn_shop_normal.png" id="4_ynwtr"]
 [ext_resource type="Texture2D" uid="uid://dc7yje16gfpgo" path="res://Scenes/UpgradeShop/Assets/Art/btn_shop_pressed.png" id="5_od0mr"]

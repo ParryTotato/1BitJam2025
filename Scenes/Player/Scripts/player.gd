@@ -91,6 +91,12 @@ func reset_player():
 	position = starting_position
 	target_position = starting_position
 	is_moving = false
+	reset_translocator()
+	
+func reset_translocator():
+	if translocator != null:
+		translocator.disappear()
+		translocator = null
 	
 func handle_translocator():
 	if translocator == null:
@@ -101,8 +107,7 @@ func handle_translocator():
 		position = translocator.position
 		target_position = position
 		#TODO: decide if we remove the translocator once we TP to it
-		translocator.disappear()
-		translocator = null
+		reset_translocator()
 	
 func _on_kick_upgraded():
 	has_kick_boots = true

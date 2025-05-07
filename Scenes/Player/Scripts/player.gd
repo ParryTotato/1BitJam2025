@@ -9,6 +9,9 @@ var is_pushing = false
 var last_direction = "idle"
 var target_position : Vector2
 var starting_position : Vector2
+var has_kick_boots := false
+var has_magnet := false
+var has_translocator := false
 
 # Variables that can be increased via upgrades
 var push_force = 64
@@ -17,6 +20,8 @@ func _ready():
 	starting_position = position
 	reset_player()
 	#TODO: Apply player upgrades
+	Messenger.kick_upgraded.connect(_on_kick_upgraded)
+	Messenger.upgrades_refunded.connect(_on_upgrades_refunded)
 
 func _physics_process(_delta):
 	if is_moving or is_pushing:
@@ -49,7 +54,7 @@ func _physics_process(_delta):
 		# Collision, push time
 		elif result.collider.has_method("push"):
 			var push_direction = input_dir
-			if result.collider.push(push_direction * push_force, self):
+			if result.collider.push(push_direction * push_force, self, has_kick_boots):
 				is_pushing = true
 				result.collider.push_completed.connect(_on_push_complete, CONNECT_ONE_SHOT)
 	elif last_direction != "idle":
@@ -81,3 +86,17 @@ func reset_player():
 	position = starting_position
 	target_position = starting_position
 	is_moving = false
+	
+func _on_kick_upgraded():
+	has_kick_boots = true
+
+func _on_magnet_upgraded():
+	has_magnet = true
+	
+func _on_translocator_upgraded():
+	has_translocator = true
+
+func _on_upgrades_refunded():
+	has_kick_boots = false
+	has_magnet = false
+	has_translocator = false

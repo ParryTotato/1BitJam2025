@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://cqhk3a430hjol"]
+[gd_scene load_steps=5 format=4 uid="uid://cqhk3a430hjol"]
 
 [ext_resource type="PackedScene" uid="uid://tckltt0bntyn" path="res://Scenes/BaseLevel/base_level.tscn" id="1_7t06c"]
 [ext_resource type="PackedScene" uid="uid://bjuhttikb3pck" path="res://Scenes/Goal/goal.tscn" id="2_db73o"]
 [ext_resource type="PackedScene" uid="uid://bnva6bahaqsv3" path="res://Scenes/Coin/coin.tscn" id="3_npfmg"]
 [ext_resource type="PackedScene" uid="uid://cjucuym23y50g" path="res://Scenes/Box/box.tscn" id="4_k8g1k"]
-[ext_resource type="Script" uid="uid://dnwmx7teo0u2t" path="res://Scenes/Player/player.gd" id="4_npfmg"]
-[ext_resource type="Script" uid="uid://dcv7r3c6ooga3" path="res://Scenes/Box/box.gd" id="5_k8g1k"]
 
 [node name="TestLevel" instance=ExtResource("1_7t06c")]
 tile_map_data = PackedByteArray("AAAFAAIAAQAHAAEAAAAFAAQAAQAHAAEAAAAGAAIAAQAHAAEAAAAGAAQAAQAHAAEAAAAHAAIAAQAHAAEAAAAIAAIAAQAHAAEAAAAIAAQAAQAHAAEAAAAJAAIAAQAHAAEAAAAJAAQAAQAHAAEAAAAKAAIAAQAHAAEAAAAKAAQAAQAHAAEAAAALAAEAAQAAAAgAAAALAAIAAQACAAoAAAALAAQAAQACAAgAAAALAAUAAQAHAAAAAAALAAYAAQAHAAAAAAALAAcAAQAHAAAAAAALAAgAAQAHAAAAAAALAAkAAQAAAAoAAAANAAEAAQACAAgAAAANAAIAAQAHAAAAAAANAAMAAQAHAAAAAAANAAQAAQAHAAAAAAANAAUAAQAHAAAAAAANAAYAAQAHAAAAAAANAAcAAQAHAAAAAAANAAgAAQAHAAAAAAANAAkAAQACAAoAAAAMAAkAAQAHAAEAAAAMAAEAAQAHAAEAAAAHAAQAAQAHAAEAAAAEAAQAAQAAAAoAAAAEAAMAAQAHAAAAAAAEAAIAAQAAAAgAAAA=")
@@ -36,15 +34,12 @@ position = Vector2(416, 224)
 
 [node name="Player" parent="." index="8"]
 position = Vector2(800, 544)
-script = ExtResource("4_npfmg")
 
 [node name="Box" parent="." index="9"]
 position = Vector2(800, 480)
-script = ExtResource("5_k8g1k")
 
 [node name="Box2" parent="." index="10" instance=ExtResource("4_k8g1k")]
 position = Vector2(608, 224)
-script = ExtResource("5_k8g1k")
 
 [node name="Spawn" parent="." index="11"]
 position = Vector2(800, 544)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djd7uqqtbomim"
-path="res://.godot/imported/btn_magnet.png-18be8a0b006c567c67e8e7369bfd74e3.ctex"
+uid="uid://dhodpfhfptkqo"
+path="res://.godot/imported/btn_coin_multiplier.png-0e4c4da4e0f2568c7e07e26b80317ad2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/btn_magnet.png"
-dest_files=["res://.godot/imported/btn_magnet.png-18be8a0b006c567c67e8e7369bfd74e3.ctex"]
+source_file="res://Scenes/UpgradeShop/Assets/Art/btn_coin_multiplier.png"
+dest_files=["res://.godot/imported/btn_coin_multiplier.png-0e4c4da4e0f2568c7e07e26b80317ad2.ctex"]
 
 [params]
 

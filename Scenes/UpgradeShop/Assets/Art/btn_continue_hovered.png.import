@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg4bfn5s2k0vt"
-path="res://.godot/imported/spr_box.png-87b4ff364fa8b2b0445702409a52b528.ctex"
+uid="uid://cm0xhtk4vr4bi"
+path="res://.godot/imported/btn_continue_hovered.png-f6571072f6ee1f926648d0f6731492c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/spr_box.png"
-dest_files=["res://.godot/imported/spr_box.png-87b4ff364fa8b2b0445702409a52b528.ctex"]
+source_file="res://Scenes/UpgradeShop/Assets/Art/btn_continue_hovered.png"
+dest_files=["res://.godot/imported/btn_continue_hovered.png-f6571072f6ee1f926648d0f6731492c4.ctex"]
 
 [params]
 

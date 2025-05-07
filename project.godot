@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Messenger="*res://messenger.gd"
+Messenger="*res://Scripts/messenger.gd"
 
 [debug]
 
@@ -28,6 +28,14 @@ gdscript/warnings/unused_signal=0
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Scenes/": "blue",
+"res://Scripts/": "green"
+}
 
 [global_group]
 

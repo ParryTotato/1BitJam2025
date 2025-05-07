@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm0xhtk4vr4bi"
-path="res://.godot/imported/btn_continue_hovered.png-a259fcf328c5a64b27ba67762f527d21.ctex"
+uid="uid://c1g3pd5dv3ioi"
+path="res://.godot/imported/btn_timer_increase.png-906de03462519f5eb480262635fdd0c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/btn_continue_hovered.png"
-dest_files=["res://.godot/imported/btn_continue_hovered.png-a259fcf328c5a64b27ba67762f527d21.ctex"]
+source_file="res://Scenes/UpgradeShop/Assets/Art/btn_timer_increase.png"
+dest_files=["res://.godot/imported/btn_timer_increase.png-906de03462519f5eb480262635fdd0c2.ctex"]
 
 [params]
 

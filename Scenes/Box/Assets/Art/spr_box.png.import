@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvucv6aq1vxuw"
-path="res://.godot/imported/btn_translocator.png-ca19fc25bd322877255df6e96da67cce.ctex"
+uid="uid://cg4bfn5s2k0vt"
+path="res://.godot/imported/spr_box.png-fb1e2897ac6f43c7ebc470d3a2d6bb2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/btn_translocator.png"
-dest_files=["res://.godot/imported/btn_translocator.png-ca19fc25bd322877255df6e96da67cce.ctex"]
+source_file="res://Scenes/Box/Assets/Art/spr_box.png"
+dest_files=["res://.godot/imported/spr_box.png-fb1e2897ac6f43c7ebc470d3a2d6bb2b.ctex"]
 
 [params]
 

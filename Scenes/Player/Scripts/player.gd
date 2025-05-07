@@ -12,15 +12,18 @@ var starting_position : Vector2
 var has_kick_boots := false
 var has_magnet := false
 var has_translocator := false
-
-# Variables that can be increased via upgrades
 var push_force = 64
+
+var translocator: Sprite2D = null
+const TRANSLOCATOR_SCENE = preload("res://Scenes/Translocator/translocator.tscn")
 
 func _ready():
 	starting_position = position
 	reset_player()
 	#TODO: Apply player upgrades
 	Messenger.kick_upgraded.connect(_on_kick_upgraded)
+	Messenger.translocator_upgraded.connect(_on_translocator_upgraded)
+	Messenger.magnet_upgraded.connect(_on_magnet_upgraded)
 	Messenger.upgrades_refunded.connect(_on_upgrades_refunded)
 
 func _physics_process(_delta):
@@ -36,6 +39,8 @@ func _physics_process(_delta):
 		input_dir.y = -1
 	elif Input.is_action_pressed("ui_down"):
 		input_dir.y = 1
+	elif has_translocator and Input.is_action_just_pressed("translocate"):
+		handle_translocator()
 		
 	if input_dir != Vector2.ZERO:
 		var new_target = target_position + (input_dir * grid_size)
@@ -86,6 +91,18 @@ func reset_player():
 	position = starting_position
 	target_position = starting_position
 	is_moving = false
+	
+func handle_translocator():
+	if translocator == null:
+		translocator = TRANSLOCATOR_SCENE.instantiate()
+		translocator.position = position
+		get_parent().add_child(translocator)
+	else:
+		position = translocator.position
+		target_position = position
+		#TODO: decide if we remove the translocator once we TP to it
+		translocator.disappear()
+		translocator = null
 	
 func _on_kick_upgraded():
 	has_kick_boots = true

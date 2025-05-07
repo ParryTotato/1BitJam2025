@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://tckltt0bntyn"]
+
+[ext_resource type="TileSet" uid="uid://53qohgk5db7a" path="res://Assets/Tilesets/wall_tileset.tres" id="1_0f2sa"]
+[ext_resource type="Script" uid="uid://w50gfha4r5yj" path="res://Scripts/level.gd" id="2_sur3v"]
+[ext_resource type="PackedScene" uid="uid://b80me8jbqhh2t" path="res://Scenes/Player/player.tscn" id="3_4rblm"]
+[ext_resource type="PackedScene" uid="uid://cjucuym23y50g" path="res://Scenes/Box/box.tscn" id="4_ytws3"]
+[ext_resource type="PackedScene" uid="uid://bnva6bahaqsv3" path="res://Scenes/Coin/coin.tscn" id="5_0k83q"]
+
+[node name="BaseLevel" type="TileMapLayer"]
+tile_set = ExtResource("1_0f2sa")
+script = ExtResource("2_sur3v")
+metadata/_custom_type_script = "uid://w50gfha4r5yj"
+
+[node name="Player" parent="." instance=ExtResource("3_4rblm")]
+position = Vector2(32, 32)
+
+[node name="Box" parent="." instance=ExtResource("4_ytws3")]
+position = Vector2(96, 32)
+
+[node name="Coin" parent="." instance=ExtResource("5_0k83q")]
+position = Vector2(160, 32)

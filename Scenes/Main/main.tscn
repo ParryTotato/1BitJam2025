@@ -1,12 +1,8 @@
-[gd_scene load_steps=13 format=4 uid="uid://bh8cpqp8e8p50"]
+[gd_scene load_steps=9 format=3 uid="uid://bh8cpqp8e8p50"]
 
 [ext_resource type="Script" uid="uid://dikh1o0j2gd5r" path="res://Scenes/Main/Scripts/main.gd" id="1_xlvfx"]
-[ext_resource type="TileSet" uid="uid://53qohgk5db7a" path="res://Assets/Tilesets/wall_tileset.tres" id="2_imbg2"]
+[ext_resource type="PackedScene" uid="uid://cqhk3a430hjol" path="res://Scenes/Levels/test_level.tscn" id="2_2a143"]
 [ext_resource type="Script" uid="uid://bi60grvgkf1q3" path="res://Scenes/Main/Scripts/timer.gd" id="3_hryqi"]
-[ext_resource type="PackedScene" uid="uid://bnva6bahaqsv3" path="res://Scenes/Coin/coin.tscn" id="4_imbg2"]
-[ext_resource type="PackedScene" uid="uid://b80me8jbqhh2t" path="res://Scenes/Player/player.tscn" id="5_hfg1r"]
-[ext_resource type="Script" uid="uid://w50gfha4r5yj" path="res://Scripts/level.gd" id="5_y3v7k"]
-[ext_resource type="PackedScene" uid="uid://cjucuym23y50g" path="res://Scenes/Box/box.tscn" id="6_4e4y2"]
 [ext_resource type="PackedScene" uid="uid://ckphg4em2upsh" path="res://Scenes/UpgradeShop/upgrade_shop.tscn" id="7_6t3k2"]
 [ext_resource type="Script" uid="uid://d24ipw3jvtda6" path="res://Scenes/Main/Scripts/coin_count.gd" id="7_imbg2"]
 [ext_resource type="FontFile" uid="uid://ba7dpcyndctpw" path="res://Assets/FuturaND-Bold.otf" id="8_hryqi"]
@@ -28,31 +24,9 @@ outline_color = Color(0.101961, 0.109804, 0.117647, 1)
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xlvfx")
 
-[node name="Background" type="ColorRect" parent="."]
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0.101961, 0.109804, 0.117647, 1)
-metadata/_edit_lock_ = true
+[node name="CurrentLevel" type="Node2D" parent="."]
 
-[node name="Walls" type="TileMapLayer" parent="."]
-position = Vector2(-1, 0)
-tile_map_data = PackedByteArray("AAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQABAAAAAAALAAAAAQABAAAAAAAMAAAAAQABAAAAAAANAAAAAQABAAAAAAAOAAAAAQAFAAoAAAAPAAAAAQABAAAAAAAQAAAAAQABAAAAAAARAAAAAQABAAAAAAASAAAAAQABAAAAAAATAAAAAQACAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAUAAQAAAAEAAAAAAAYAAQAAAAEAAAAAAAcAAQAAAAEAAAAAAAgAAQAAAAEAAAAAAAkAAQAAAAEAAAAAAAoAAQAAAAIAAAABAAoAAQABAAIAAAACAAoAAQABAAIAAAADAAoAAQABAAIAAAAEAAoAAQABAAIAAAAFAAoAAQABAAIAAAAGAAoAAQABAAIAAAAHAAoAAQABAAIAAAAIAAoAAQABAAIAAAAJAAoAAQABAAIAAAAKAAoAAQABAAIAAAALAAoAAQABAAIAAAAMAAoAAQABAAIAAAANAAoAAQABAAIAAAAOAAoAAQABAAIAAAAPAAoAAQABAAIAAAAQAAoAAQABAAIAAAARAAoAAQABAAIAAAASAAoAAQABAAIAAAATAAoAAQACAAIAAAATAAkAAQACAAEAAAATAAgAAQACAAAAAAATAAcAAQAHAAMAAAATAAYAAQAHAAMAAAATAAUAAQAHAAMAAAATAAQAAQACAAIAAAATAAMAAQACAAEAAAATAAIAAQACAAEAAAATAAEAAQACAAEAAAAOAAEAAQAHAAAAAAAOAAIAAQAEAAMAAAAPAAIAAQACAAQAAAAPAAMAAQAAAAIAAAAQAAMAAQACAAQAAAASAAQAAQAAAAQAAAAQAAQAAQACAAYAAAASAAUAAQACAAEAAAASAAYAAQACAAEAAAASAAcAAQACAAEAAAAPAAUAAQACAAYAAAAPAAQAAQAAAAAAAAAOAAUAAQAAAAYAAAAPAAcAAQABAAQAAAAOAAQAAQACAAEAAAAOAAMAAQAEAAkAAAANAAMAAQAHAAEAAAAMAAMAAQAAAAgAAAAMAAQAAQAHAAAAAAAMAAUAAQABAAYAAAAMAAcAAQABAAQAAAAMAAgAAQAAAAoAAAANAAgAAQAHAAEAAAAOAAgAAQAHAAEAAAAPAAgAAQABAAoAAAAQAAgAAQAHAAEAAAARAAgAAQAHAAEAAAASAAgAAQAFAAEAAAAKAAgAAQACAAUAAAAJAAgAAQAAAAoAAAAJAAcAAQABAAQAAAAHAAgAAQABAAYAAAAHAAcAAQABAAQAAAA=")
-tile_set = ExtResource("2_imbg2")
-
-[node name="Level" type="Node2D" parent="."]
-script = ExtResource("5_y3v7k")
-
-[node name="Coin" parent="Level" instance=ExtResource("4_imbg2")]
-position = Vector2(416, 288)
-
-[node name="Coin2" parent="Level" instance=ExtResource("4_imbg2")]
-position = Vector2(352, 288)
-
-[node name="Player" parent="Level" instance=ExtResource("5_hfg1r")]
-position = Vector2(96, 96)
-
-[node name="Box" parent="Level" groups=["box"] instance=ExtResource("6_4e4y2")]
-position = Vector2(160, 160)
+[node name="TestLevel" parent="CurrentLevel" instance=ExtResource("2_2a143")]
 
 [node name="CoinCountLabel" type="Label" parent="."]
 offset_left = 359.0

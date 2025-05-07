@@ -1,5 +1,5 @@
 class_name Level
-extends Node2D
+extends TileMapLayer
 
 var original_positions := {}
 
@@ -14,7 +14,7 @@ func _process(_delta):
 	
 	
 func _register_objects():
-	for child in get_children():
+	for child in get_children(true):
 		if child is CharacterBody2D or child is Area2D:
 			original_positions[child.name] = child.position
 

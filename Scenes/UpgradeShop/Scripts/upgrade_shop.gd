@@ -128,12 +128,14 @@ func _on_refund_pressed() -> void:
 	update_labels()
 	
 	Messenger.upgrades_refunded.emit()
-	
+
 	Messenger.coin_count_updated.emit(coin_count)
 	
 
 func _on_continue_pressed() -> void:
-	pass # Replace with function body.
+	Messenger.game_continued.emit()
+	
+	Messenger.upgrades_verified.emit(upgrades)
 #endregion
 
 

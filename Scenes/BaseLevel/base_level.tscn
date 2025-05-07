@@ -12,14 +12,17 @@ tile_set = ExtResource("1_0f2sa")
 script = ExtResource("2_sur3v")
 metadata/_custom_type_script = "uid://w50gfha4r5yj"
 
+[node name="Goal" parent="." instance=ExtResource("6_xx5mc")]
+position = Vector2(224, 32)
+
+[node name="Coin" parent="." instance=ExtResource("5_0k83q")]
+position = Vector2(160, 32)
+
 [node name="Player" parent="." instance=ExtResource("3_4rblm")]
 position = Vector2(32, 32)
 
 [node name="Box" parent="." instance=ExtResource("4_ytws3")]
 position = Vector2(96, 32)
 
-[node name="Coin" parent="." instance=ExtResource("5_0k83q")]
-position = Vector2(160, 32)
-
-[node name="Goal" parent="." instance=ExtResource("6_xx5mc")]
-position = Vector2(224, 32)
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(288, 32)

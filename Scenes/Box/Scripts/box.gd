@@ -1,3 +1,4 @@
+class_name Box
 extends CharacterBody2D
 
 signal push_completed

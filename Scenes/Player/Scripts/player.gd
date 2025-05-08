@@ -25,6 +25,9 @@ func _ready():
 	Messenger.translocator_upgraded.connect(_on_translocator_upgraded)
 	Messenger.magnet_upgraded.connect(_on_magnet_upgraded)
 	Messenger.upgrades_refunded.connect(_on_upgrades_refunded)
+	Messenger.timer_duration_ended.connect(_on_timer_duration_ended)
+	Messenger.game_continued.connect(_on_game_continued)
+	#Messenger.level_completed.connect
 
 func _physics_process(_delta):
 	if is_moving or is_pushing:
@@ -122,3 +125,9 @@ func _on_upgrades_refunded():
 	has_kick_boots = false
 	has_magnet = false
 	has_translocator = false
+
+func _on_timer_duration_ended():
+	set_physics_process(false)
+
+func _on_game_continued():
+	set_physics_process(true)

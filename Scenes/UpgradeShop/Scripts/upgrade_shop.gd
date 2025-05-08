@@ -31,6 +31,7 @@ func _ready() -> void:
 	update_labels()
 
 	Messenger.connect("coin_collected", _on_coin_collected)
+	Messenger.timer_duration_ended.connect(_on_timer_duration_ended)
 	
 
 func valid_purchase(type: String) -> bool:
@@ -150,5 +151,5 @@ func _on_coin_collected() -> void:
 	Messenger.coin_count_updated.emit(coin_count)
 
 
-func _on_timer_duration_timeout() -> void:
+func _on_timer_duration_ended() -> void:
 	visible = true

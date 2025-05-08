@@ -23,6 +23,3 @@ position = Vector2(32, 32)
 
 [node name="Box" parent="." instance=ExtResource("4_ytws3")]
 position = Vector2(96, 32)
-
-[node name="Spawn" type="Marker2D" parent="."]
-position = Vector2(288, 32)

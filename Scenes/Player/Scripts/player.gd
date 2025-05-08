@@ -28,6 +28,8 @@ func _ready():
 	Messenger.timer_duration_ended.connect(_on_timer_duration_ended)
 	Messenger.game_continued.connect(_on_game_continued)
 	Messenger.level_loaded.connect(_on_level_loaded)
+	
+	Messenger.upgrades_verified.connect(_on_upgrades_verified)
 
 
 func _physics_process(_delta):
@@ -135,3 +137,19 @@ func _on_game_continued():
 
 func _on_level_loaded():
 	set_physics_process(false)
+
+func _on_upgrades_verified(upgrades: Dictionary):
+	if upgrades["Kick"]["tier"] == 0:
+		has_kick_boots = false
+	else:
+		has_kick_boots = true
+		
+	if upgrades["Magnet"]["tier"] == 0:
+		has_magnet = false
+	else:
+		has_magnet = true
+		
+	if upgrades["Translocator"]["tier"] == 0:
+		has_translocator = false
+	else:
+		has_translocator = true

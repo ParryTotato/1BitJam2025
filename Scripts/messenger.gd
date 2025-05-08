@@ -22,3 +22,4 @@ signal goal_filled
 # Level
 signal level_reset
 signal level_completed(level)
+signal level_loaded()

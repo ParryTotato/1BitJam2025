@@ -18,7 +18,6 @@ var translocator: Sprite2D = null
 const TRANSLOCATOR_SCENE = preload("res://Scenes/Translocator/translocator.tscn")
 
 func _ready():
-	set_physics_process(false)
 	starting_position = position
 	reset_player()
 	#TODO: Apply player upgrades
@@ -28,6 +27,7 @@ func _ready():
 	Messenger.upgrades_refunded.connect(_on_upgrades_refunded)
 	Messenger.timer_duration_ended.connect(_on_timer_duration_ended)
 	Messenger.game_continued.connect(_on_game_continued)
+	Messenger.level_loaded.connect(_on_level_loaded)
 
 
 func _physics_process(_delta):
@@ -132,3 +132,6 @@ func _on_timer_duration_ended():
 
 func _on_game_continued():
 	set_physics_process(true)
+
+func _on_level_loaded():
+	set_physics_process(false)

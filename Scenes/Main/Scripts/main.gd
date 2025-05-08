@@ -8,7 +8,9 @@ extends Node2D
 
 
 func _ready():
-	load_level("res://Scenes/Levels/Level_1.tscn")
+	var level_1 = load("res://Scenes/Levels/Level_1.tscn") as PackedScene
+	var level_1_instance = level_1.instantiate()
+	game.add_child(level_1_instance)
 	
 	Messenger.game_continued.connect(_on_game_continued)
 	Messenger.level_completed.connect(_on_level_completed)
@@ -61,3 +63,4 @@ func load_level(level: String) -> void:
 	var new_level_instance = new_level.instantiate()
 	
 	game.add_child(new_level_instance)
+	Messenger.level_loaded.emit()

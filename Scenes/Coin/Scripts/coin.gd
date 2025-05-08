@@ -22,7 +22,6 @@ func collect(_body: Node2D):
 	
 	#$Sprite.visible = false
 	#$Collision.set_deferred("disabled", true)
-	
 	Messenger.coin_collected.emit()
 	$Sprite.visible = false
 	$Collision.set_deferred("disabled", true)

@@ -14,6 +14,7 @@ func _ready():
 	
 	Messenger.game_continued.connect(_on_game_continued)
 	Messenger.level_completed.connect(_on_level_completed)
+	Messenger.coin_collected.connect(_on_coin_collected)
 	timer.start()
 
 
@@ -64,3 +65,6 @@ func load_level(level: String) -> void:
 	
 	game.add_child(new_level_instance)
 	Messenger.level_loaded.emit()
+
+func _on_coin_collected():
+	$AudioStreamPlayer.play()

@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://p5r8m728jooc"]
+[gd_scene load_steps=8 format=3 uid="uid://p5r8m728jooc"]
 
+[ext_resource type="Texture2D" uid="uid://f4bq3pumhco3" path="res://Scenes/UpgradeShop/Assets/Art/btn_shop_normal.png" id="1_0qgbs"]
 [ext_resource type="Script" uid="uid://ca2nfae8kyxdt" path="res://Scenes/MainMenu/Scripts/main_menu.gd" id="1_adu2g"]
 [ext_resource type="Texture2D" uid="uid://brio6fyoshhsy" path="res://Scenes/UpgradeShop/Assets/Art/btn_continue.png" id="2_adu2g"]
 [ext_resource type="Texture2D" uid="uid://c86udavrvjk1y" path="res://Scenes/UpgradeShop/Assets/Art/btn_continue_pressed.png" id="3_0l8wx"]
 [ext_resource type="Texture2D" uid="uid://cm0xhtk4vr4bi" path="res://Scenes/UpgradeShop/Assets/Art/btn_continue_hovered.png" id="4_2r307"]
+[ext_resource type="Texture2D" uid="uid://dc7yje16gfpgo" path="res://Scenes/UpgradeShop/Assets/Art/btn_shop_pressed.png" id="6_n5jej"]
+[ext_resource type="Texture2D" uid="uid://0lqfuxg4uaph" path="res://Scenes/UpgradeShop/Assets/Art/btn_shop_hovered.png" id="7_2r307"]
 
 [node name="Mainmenu" type="Control"]
 layout_mode = 3
@@ -39,6 +42,33 @@ texture_normal = ExtResource("2_adu2g")
 texture_pressed = ExtResource("3_0l8wx")
 texture_hover = ExtResource("4_2r307")
 
+[node name="SettingsPanel" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 800.0
+offset_top = 250.0
+offset_right = 1000.0
+offset_bottom = 550.0
+metadata/_edit_group_ = true
+
+[node name="Master Volume" type="Label" parent="SettingsPanel"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="SettingsPanel"]
+layout_mode = 2
+value = 50.0
+
+[node name="VolumeValueLabel" type="Label" parent="SettingsPanel"]
+layout_mode = 2
+text = "50%"
+
+[node name="BackButton" type="TextureButton" parent="SettingsPanel"]
+layout_mode = 2
+texture_normal = ExtResource("1_0qgbs")
+texture_pressed = ExtResource("6_n5jej")
+texture_hover = ExtResource("7_2r307")
+
 [connection signal="pressed" from="VBoxContainer/PlayGame" to="." method="_on_start_game"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_clicked"]
 [connection signal="pressed" from="VBoxContainer/Quit Game" to="." method="_on_game_quit"]
+[connection signal="pressed" from="SettingsPanel/BackButton" to="." method="_on_settings_back_button_clicked"]

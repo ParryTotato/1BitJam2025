@@ -13,7 +13,6 @@ const LEVEL_1 = preload("res://Scenes/Levels/Level_1.tscn") as PackedScene
 func _ready():
 	show_main_menu()
 	
-	Messenger.game_starting.connect(on_game_start)
 	Messenger.game_continued.connect(_on_game_continued)
 	Messenger.level_completed.connect(_on_level_completed)
 	Messenger.coin_collected.connect(_on_coin_collected)
@@ -23,7 +22,7 @@ func show_main_menu():
 	upgrade_shop.visible = false
 	game.visible = false
 
-func on_game_start() -> void:
+func start_game() -> void:
 	main_menu.visible = false
 	game.visible = true
 	

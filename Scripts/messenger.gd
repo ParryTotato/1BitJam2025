@@ -23,3 +23,6 @@ signal goal_filled
 signal level_reset
 signal level_completed(level)
 signal level_loaded()
+
+# Game starting
+signal game_starting

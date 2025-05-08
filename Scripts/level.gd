@@ -19,9 +19,10 @@ func _process(_delta):
 	
 	if goals_filled == goal_count:
 		print("All goals filled")
+		goals_filled = 0
 		Messenger.level_completed.emit(self.name)
 		
-	print("Goal count: " + str(goal_count) + " Goals filled: " + str(goals_filled))
+	#print("Goal count: " + str(goal_count) + " Goals filled: " + str(goals_filled))
 	
 func _register_objects():
 	for child in get_children(true):

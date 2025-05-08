@@ -6,7 +6,7 @@ var original_positions := {}
 
 func _ready():
 	_register_objects()
-	
+
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("reset"):
@@ -17,12 +17,6 @@ func _register_objects():
 	for child in get_children(true):
 		if child is CharacterBody2D or child is Area2D:
 			original_positions[child.name] = child.position
-
-
-func _get_object_state(obj: Node) -> Dictionary:
-	if obj.has_method("get_state"):
-		return obj.get_state()
-	return {}
 
 
 func reset_level():

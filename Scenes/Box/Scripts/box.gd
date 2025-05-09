@@ -9,6 +9,8 @@ var being_pushed = false
 func push(direction: Vector2, pusher: Node, kick_boots_active: bool) -> bool:
 	if being_pushed:
 		return false
+	
+	$AudioStreamPlayer.play()
 		
 	being_pushed = true
 	var push_distance = direction.normalized() * grid_size

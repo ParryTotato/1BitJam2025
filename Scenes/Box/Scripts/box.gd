@@ -9,33 +9,52 @@ var being_pushed = false
 func push(direction: Vector2, pusher: Node, kick_boots_active: bool) -> bool:
 	if being_pushed:
 		return false
+		
 	being_pushed = true
-	var push_distance = direction.normalized() * grid_size * (3 if kick_boots_active else 1)
-	var target_pos = position + push_distance
+	var push_distance = direction.normalized() * grid_size
+	var target_pos = position + push_distance * (3 if kick_boots_active else 1)
 	var space_state = get_world_2d().direct_space_state
-	var query = PhysicsRayQueryParameters2D.create(position, target_pos, collision_mask, [self, pusher])
-	var result = space_state.intersect_ray(query)
 	
-	if result:
-		if kick_boots_active:
-			target_pos -= direction.normalized() * grid_size
-			query = PhysicsRayQueryParameters2D.create(position, target_pos, collision_mask, [self, pusher])
-			result = space_state.intersect_ray(query)
-			if result:
-				target_pos -= direction.normalized() * grid_size
-				query = PhysicsRayQueryParameters2D.create(position, target_pos, collision_mask, [self, pusher])
-				result = space_state.intersect_ray(query)
-				if !result:
-					move_box_success(target_pos, 0.4)
-					return true
-			move_box_success(target_pos, 0.4)
-			return true
-		being_pushed = false
-		return false
-	
-	# Move the box
-	move_box_success(target_pos, 0.2)
-	return true
+	# Check kick distances in descending order (3 → 2 → 1)
+	if kick_boots_active:
+		var kick_distances = [3, 2, 1]  # Ordered from longest to shortest
+		var found_valid_push = false
+		
+		for distance in kick_distances:
+			var test_pos = position + (push_distance * distance)
+			var query = PhysicsRayQueryParameters2D.create(
+				position, 
+				test_pos,
+				collision_mask,
+				[self, pusher]
+			)
+			
+			if not space_state.intersect_ray(query):
+				target_pos = test_pos
+				found_valid_push = true
+				break
+				
+		if not found_valid_push:
+			being_pushed = false
+			return false
+			
+		move_box_success(target_pos, 0.4)
+		return true
+	else:
+		# Normal push (1 tile)
+		var query = PhysicsRayQueryParameters2D.create(
+			position,
+			target_pos,
+			collision_mask,
+			[self, pusher]
+		)
+		
+		if space_state.intersect_ray(query):
+			being_pushed = false
+			return false
+			
+		move_box_success(target_pos, 0.2)
+		return true
 
 func _on_push_complete():
 	being_pushed = false

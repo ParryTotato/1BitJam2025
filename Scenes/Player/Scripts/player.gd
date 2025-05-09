@@ -114,7 +114,7 @@ func reset_player():
 func handle_magnet():
 	var pull_direction = get_facing_from_animation()
 	var space_state = get_world_2d().direct_space_state
-	var check_distance = grid_size * 3
+	var check_distance = grid_size * 4
 	var check_end = position + (pull_direction * check_distance)
 	
 	var query = PhysicsRayQueryParameters2D.create(

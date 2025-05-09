@@ -41,8 +41,8 @@ func reset_level():
 			if child.has_method("reset_player"):
 				child.reset_player()
 			
-			if child.has_method("re_enable_coin"):
-				child.re_enable_coin()
+			#if child.has_method("re_enable_coin"):
+				#child.re_enable_coin()
 	set_physics_process(true)
 
 	goals_filled = 0

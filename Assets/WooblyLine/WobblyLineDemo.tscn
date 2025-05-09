@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsec02wampcr1"]
+
+[ext_resource type="Shader" uid="uid://w60wp1hhxnix" path="res://Assets/WooblyLine/wobbly_waves.tres" id="1_mpp88"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8uh7m"]
+shader = ExtResource("1_mpp88")
+shader_parameter/OutlineColor = Color(0, 0, 0, 1)
+shader_parameter/WobbleIntensity = 1.5
+shader_parameter/WobbleSpeed = 5.0
+shader_parameter/WobbleFrequency = 1.0
+shader_parameter/Frequency = 20.0
+shader_parameter/Speed = 5.0
+shader_parameter/Thickness = 1.0
+shader_parameter/Feather = 0.05
+shader_parameter/OutlineThickness = 0.53
+shader_parameter/OutlineFeather = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_37kl0"]
+shader = ExtResource("1_mpp88")
+shader_parameter/OutlineColor = Color(0, 0, 0, 1)
+shader_parameter/WobbleIntensity = 0.0
+shader_parameter/WobbleSpeed = 3.0
+shader_parameter/WobbleFrequency = 1.0
+shader_parameter/Frequency = 10.0
+shader_parameter/Speed = 3.0
+shader_parameter/Thickness = 1.0
+shader_parameter/Feather = 0.05
+shader_parameter/OutlineThickness = 0.5
+shader_parameter/OutlineFeather = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6uqi0"]
+shader = ExtResource("1_mpp88")
+shader_parameter/OutlineColor = Color(0, 0, 0, 1)
+shader_parameter/WobbleIntensity = 1.0
+shader_parameter/WobbleSpeed = 0.1
+shader_parameter/WobbleFrequency = 4.0
+shader_parameter/Frequency = 5.0
+shader_parameter/Speed = 5.0
+shader_parameter/Thickness = 1.0
+shader_parameter/Feather = 0.5
+shader_parameter/OutlineThickness = 0.5
+shader_parameter/OutlineFeather = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ppyta"]
+shader = ExtResource("1_mpp88")
+shader_parameter/OutlineColor = Color(0, 0, 0, 1)
+shader_parameter/WobbleIntensity = 2.0
+shader_parameter/WobbleSpeed = 5.0
+shader_parameter/WobbleFrequency = 5.0
+shader_parameter/Frequency = 10.0
+shader_parameter/Speed = 3.0
+shader_parameter/Thickness = 0.5
+shader_parameter/Feather = 0.1
+shader_parameter/OutlineThickness = 0.5
+shader_parameter/OutlineFeather = 0.05
+
+[node name="Examples" type="Node2D"]
+
+[node name="Line2D" type="Line2D" parent="."]
+material = SubResource("ShaderMaterial_8uh7m")
+position = Vector2(-332, -108)
+points = PackedVector2Array(192, 64, 512, 64)
+width = 20.0
+default_color = Color(0.737255, 0.737255, 0.737255, 1)
+texture_mode = 1
+sharp_limit = 0.0
+round_precision = 1
+
+[node name="Line2D2" type="Line2D" parent="."]
+material = SubResource("ShaderMaterial_37kl0")
+position = Vector2(-332, -76)
+points = PackedVector2Array(192, 64, 512, 64)
+width = 20.0
+default_color = Color(0.737255, 0.737255, 0.737255, 1)
+texture_mode = 1
+sharp_limit = 0.0
+round_precision = 1
+
+[node name="Line2D3" type="Line2D" parent="."]
+material = SubResource("ShaderMaterial_6uqi0")
+position = Vector2(-332, -44)
+points = PackedVector2Array(192, 64, 512, 64)
+width = 20.0
+default_color = Color(0.737255, 0.737255, 0.737255, 1)
+texture_mode = 1
+sharp_limit = 0.0
+round_precision = 1
+
+[node name="Line2D4" type="Line2D" parent="."]
+material = SubResource("ShaderMaterial_ppyta")
+position = Vector2(-332, -4)
+points = PackedVector2Array(192, 64, 512, 64)
+width = 20.0
+default_color = Color(0.737255, 0.737255, 0.737255, 1)
+texture_mode = 1
+sharp_limit = 0.0
+round_precision = 1

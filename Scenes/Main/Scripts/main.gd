@@ -63,6 +63,8 @@ func load_level(level: String) -> void:
 	for child in game.get_children():
 		child.queue_free()
 	
+	await get_tree().process_frame
+	
 	var new_level = load(level) as PackedScene
 	var new_level_instance = new_level.instantiate()
 	

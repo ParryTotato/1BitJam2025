@@ -4,17 +4,10 @@ extends Control
 @onready var volume_label = $VBoxContainer/VolumeValueLabel
 
 func _ready():
-	var current_db = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))
-	volume_slider.value = _db_to_percent(current_db)
-	volume_label.text = "%d%%" % volume_slider.value
+	# Sets the volume level to the default value of slider (30 at time of writing)
+	_on_volume_changed(volume_slider.value)
 
 func _on_volume_changed(value: float):
-	if value <= 1:
-		AudioServer.set_bus_volume_db(0, -80.0)
-		volume_label.text = "0%"
-		volume_slider.value = 1
-		return
-		
 	var db = _percent_to_db(value)
 	AudioServer.set_bus_volume_db(
 		AudioServer.get_bus_index("Master"),

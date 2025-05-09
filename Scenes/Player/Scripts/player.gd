@@ -20,7 +20,6 @@ const TRANSLOCATOR_SCENE = preload("res://Scenes/Translocator/translocator.tscn"
 func _ready():
 	starting_position = position
 	reset_player()
-	#TODO: Apply player upgrades
 	Messenger.kick_upgraded.connect(_on_kick_upgraded)
 	Messenger.translocator_upgraded.connect(_on_translocator_upgraded)
 	Messenger.magnet_upgraded.connect(_on_magnet_upgraded)

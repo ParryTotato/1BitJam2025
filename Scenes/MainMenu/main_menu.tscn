@@ -47,7 +47,7 @@ label_settings = SubResource("LabelSettings_n5jej")
 
 [node name="VolumeSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
-value = 100.0
+value = 30.0
 
 [node name="VolumeValueLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2

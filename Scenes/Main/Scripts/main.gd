@@ -2,6 +2,8 @@ extends Node2D
 
 
 @onready var game: Node2D = $Game
+@onready var coin_symbol : Sprite2D = $Coin
+@onready var coin_label : Label = $CoinCountLabel
 @onready var timer: Timer = $TimerDuration
 @onready var timer_label: Label = $TimerDuration/TimerDurationLabel
 @onready var upgrade_shop: Control = $UI/UpgradeShop
@@ -17,6 +19,9 @@ func _ready():
 	Messenger.coin_collected.connect(_on_coin_collected)
 
 func show_main_menu():
+	timer_label.visible = false
+	coin_symbol.visible = false
+	coin_label.visible = false
 	main_menu.visible = true
 	upgrade_shop.visible = false
 	game.visible = false
@@ -28,6 +33,8 @@ func start_game() -> void:
 	load_level("res://Scenes/Levels/Level_1.tscn")
 	timer.start()
 	timer_label.visible = true
+	coin_symbol.visible = true
+	coin_label.visible = true
 
 func _on_timer_duration_timeout() -> void:
 	if upgrade_shop.visible:

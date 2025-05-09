@@ -46,6 +46,8 @@ func _physics_process(_delta):
 		input_dir.y = 1
 	elif has_translocator and Input.is_action_just_pressed("translocate"):
 		handle_translocator()
+	elif has_magnet and Input.is_action_just_pressed("magnet"):
+		handle_magnet()
 		
 	if input_dir != Vector2.ZERO:
 		var new_target = target_position + (input_dir * grid_size)
@@ -86,6 +88,14 @@ func _play_move_animation(input_dir: Vector2):
 		$AnimatedSprite2D.play("down")
 		last_direction = "down"
 
+func get_facing_from_animation() -> Vector2:
+	match $AnimatedSprite2D.animation:
+		"right": return Vector2.RIGHT
+		"left": return Vector2.LEFT
+		"up": return Vector2.UP
+		"down": return Vector2.DOWN
+		_: return Vector2.UP
+
 func _on_move_complete():
 	is_moving = false
 
@@ -93,10 +103,32 @@ func _on_push_complete():
 	is_pushing = false
 
 func reset_player():
+	is_moving = false
+	is_pushing = false
 	position = starting_position
 	target_position = starting_position
 	is_moving = false
 	reset_translocator()
+	force_update_transform()
+	
+func handle_magnet():
+	var pull_direction = get_facing_from_animation()
+	var space_state = get_world_2d().direct_space_state
+	var check_distance = grid_size * 3
+	var check_end = position + (pull_direction * check_distance)
+	
+	var query = PhysicsRayQueryParameters2D.create(
+		position,
+		check_end,
+		collision_mask,
+		[self]
+	)
+	var result = space_state.intersect_ray(query)
+	
+	print(result)
+	
+	if result and result.collider.has_method("pull"):
+		result.collider.pull(pull_direction, self)
 	
 func reset_translocator():
 	if translocator != null:
@@ -111,7 +143,6 @@ func handle_translocator():
 	else:
 		position = translocator.position
 		target_position = position
-		#TODO: decide if we remove the translocator once we TP to it
 		reset_translocator()
 	
 func _on_kick_upgraded():

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1bgf"]
 size = Vector2(58, 58)
 
-[node name="Box" type="CharacterBody2D"]
+[node name="Box" type="CharacterBody2D" groups=["box"]]
 script = ExtResource("1_8rww4")
 metadata/_edit_group_ = true
 

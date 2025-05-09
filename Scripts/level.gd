@@ -31,11 +31,14 @@ func _register_objects():
 			goal_count += 1
 
 func reset_level():
+	Input.action_release("ui_up")
+	Input.action_release("ui_down")
+	Input.action_release("ui_left")
+	Input.action_release("ui_right")
 	set_physics_process(false)
 	for child in get_children():
 		if child.name in original_positions:
 			child.position = original_positions[child.name]
-			
 			if child.has_method("reset_player"):
 				child.reset_player()
 	set_physics_process(true)

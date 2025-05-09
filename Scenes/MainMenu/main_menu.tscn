@@ -66,7 +66,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="FallingBoxes" type="CPUParticles2D" parent="."]
-position = Vector2(640, 0)
+position = Vector2(640, -45)
 amount = 1
 texture = ExtResource("2_agesy")
 lifetime = 1.8
@@ -87,16 +87,18 @@ horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-offset_left = 507.0
+offset_left = 497.5
 offset_top = 261.0
-offset_right = 769.0
+offset_right = 782.5
 offset_bottom = 551.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 12
+metadata/_edit_group_ = true
 
 [node name="PlayGame" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_stretch_ratio = 0.0
 texture_normal = ExtResource("2_omq0y")
 texture_pressed = ExtResource("3_agesy")
@@ -159,9 +161,9 @@ value = 25.0
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 595.5
-offset_top = 615.0
+offset_top = 628.0
 offset_right = 684.5
-offset_bottom = 660.0
+offset_bottom = 673.0
 text = "MADE BY
 "
 label_settings = SubResource("LabelSettings_rlg4b")
@@ -184,12 +186,12 @@ label_settings = SubResource("LabelSettings_omq0y")
 
 [node name="Label2" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-text = "GLASSODERP"
+text = "YOMAG"
 label_settings = SubResource("LabelSettings_agesy")
 
 [node name="Label3" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-text = "YOMAG"
+text = "GLASSODERP"
 label_settings = SubResource("LabelSettings_mdp32")
 
 [node name="Quit Game" type="TextureButton" parent="."]

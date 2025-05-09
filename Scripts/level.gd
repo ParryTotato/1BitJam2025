@@ -18,11 +18,8 @@ func _process(_delta):
 		reset_level()
 	
 	if goals_filled == goal_count:
-		print("All goals filled")
 		Messenger.level_completed.emit(self.name)
 		
-	print("Goal count: " + str(goal_count) + " Goals filled: " + str(goals_filled))
-	
 func _register_objects():
 	for child in get_children(true):
 		if child is CharacterBody2D or child is Area2D:

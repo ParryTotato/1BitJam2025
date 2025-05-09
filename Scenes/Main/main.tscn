@@ -33,9 +33,10 @@ outline_color = Color(0.101961, 0.109804, 0.117647, 1)
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xlvfx")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="CoinCollectSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_xlvfx")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="StarParticles" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_hryqi")

@@ -81,4 +81,4 @@ func load_level(level: String) -> void:
 	Messenger.level_loaded.emit()
 
 func _on_coin_collected():
-	$AudioStreamPlayer.play()
+	$CoinCollectSound.play()

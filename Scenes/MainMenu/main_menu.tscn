@@ -1,19 +1,61 @@
-[gd_scene load_steps=8 format=3 uid="uid://p5r8m728jooc"]
+[gd_scene load_steps=19 format=3 uid="uid://p5r8m728jooc"]
 
 [ext_resource type="Script" uid="uid://ca2nfae8kyxdt" path="res://Scenes/MainMenu/Scripts/main_menu.gd" id="1_adu2g"]
 [ext_resource type="Texture2D" uid="uid://brio6fyoshhsy" path="res://Scenes/UpgradeShop/Assets/Art/btn_continue.png" id="2_adu2g"]
+[ext_resource type="Texture2D" uid="uid://cg4bfn5s2k0vt" path="res://Scenes/Box/Assets/Art/spr_box.png" id="2_agesy"]
+[ext_resource type="Texture2D" uid="uid://vll017sp3yks" path="res://Scenes/MainMenu/Assets/Art/btn_play.png" id="2_omq0y"]
 [ext_resource type="Texture2D" uid="uid://c86udavrvjk1y" path="res://Scenes/UpgradeShop/Assets/Art/btn_continue_pressed.png" id="3_0l8wx"]
+[ext_resource type="Texture2D" uid="uid://cdyshqxjxcqwy" path="res://Scenes/MainMenu/Assets/Art/btn_play_pressed.png" id="3_agesy"]
 [ext_resource type="Texture2D" uid="uid://cm0xhtk4vr4bi" path="res://Scenes/UpgradeShop/Assets/Art/btn_continue_hovered.png" id="4_2r307"]
+[ext_resource type="Texture2D" uid="uid://bk1vyntp6b8ji" path="res://Scenes/MainMenu/Assets/Art/btn_play_hovered.png" id="4_mdp32"]
 [ext_resource type="FontFile" uid="uid://ba7dpcyndctpw" path="res://Assets/FuturaND-Bold.otf" id="5_0l8wx"]
+[ext_resource type="Texture2D" uid="uid://breowtnacsawn" path="res://Scenes/MainMenu/Assets/Art/spr_box_slider.png" id="6_0l8wx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0l8wx"]
+font_size = 50
+font_color = Color(0.737255, 0.737255, 0.737255, 1)
+outline_size = 12
+outline_color = Color(0.101961, 0.109804, 0.117647, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_n5jej"]
 font = ExtResource("5_0l8wx")
+font_size = 24
 font_color = Color(0.737255, 0.737255, 0.737255, 1)
+outline_size = 8
 outline_color = Color(0.101961, 0.109804, 0.117647, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_2r307"]
 font = ExtResource("5_0l8wx")
 font_color = Color(0.737255, 0.737255, 0.737255, 1)
+outline_size = 8
+outline_color = Color(0.101961, 0.109804, 0.117647, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_adu2g"]
+color = Color(0.737255, 0.737255, 0.737255, 1)
+grow_begin = -1.0
+grow_end = -1.0
+thickness = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_rlg4b"]
+font_size = 18
+font_color = Color(0.737255, 0.737255, 0.737255, 1)
+outline_size = 8
+outline_color = Color(0.101961, 0.109804, 0.117647, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_omq0y"]
+font = ExtResource("5_0l8wx")
+font_color = Color(0.737255, 0.737255, 0.737255, 1)
+outline_size = 8
+outline_color = Color(0.101961, 0.109804, 0.117647, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_agesy"]
+font_color = Color(0.737255, 0.737255, 0.737255, 1)
+outline_size = 8
+outline_color = Color(0.101961, 0.109804, 0.117647, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mdp32"]
+font_color = Color(0.737255, 0.737255, 0.737255, 1)
+outline_size = 8
 outline_color = Color(0.101961, 0.109804, 0.117647, 1)
 
 [node name="Mainmenu" type="Control"]
@@ -23,43 +65,145 @@ script = ExtResource("1_adu2g")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
+[node name="FallingBoxes" type="CPUParticles2D" parent="."]
+position = Vector2(640, 0)
+amount = 1
+texture = ExtResource("2_agesy")
+lifetime = 1.8
+emission_shape = 3
+emission_rect_extents = Vector2(576, 0)
+gravity = Vector2(0, 500)
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 396.5
+offset_top = 64.0
+offset_right = 883.5
+offset_bottom = 181.0
+text = "THAT'S ABOVE MY
+PAY GRADE"
+label_settings = SubResource("LabelSettings_0l8wx")
+horizontal_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 offset_left = 507.0
-offset_top = 222.0
+offset_top = 261.0
 offset_right = 769.0
-offset_bottom = 512.0
+offset_bottom = 551.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 12
-metadata/_edit_group_ = true
 
 [node name="PlayGame" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("2_adu2g")
-texture_pressed = ExtResource("3_0l8wx")
-texture_hover = ExtResource("4_2r307")
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("2_omq0y")
+texture_pressed = ExtResource("3_agesy")
+texture_hover = ExtResource("4_mdp32")
 
-[node name="Master Volume" type="Label" parent="VBoxContainer"]
+[node name="Node" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-text = "Master Volume"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Master Volume" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "SFX"
 label_settings = SubResource("LabelSettings_n5jej")
 
-[node name="VolumeSlider" type="HSlider" parent="VBoxContainer"]
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
-value = 30.0
 
-[node name="VolumeValueLabel" type="Label" parent="VBoxContainer"]
+[node name="VolumeValueLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "100%"
 label_settings = SubResource("LabelSettings_2r307")
+horizontal_alignment = 2
 
-[node name="Quit Game" type="TextureButton" parent="VBoxContainer"]
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("6_0l8wx")
+theme_override_icons/grabber_highlight = ExtResource("6_0l8wx")
+theme_override_styles/slider = SubResource("StyleBoxLine_adu2g")
+value = 50.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Master Volume" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "MUSIC"
+label_settings = SubResource("LabelSettings_n5jej")
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(144, 0)
+layout_mode = 2
+
+[node name="VolumeValueLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_2r307")
+horizontal_alignment = 2
+
+[node name="VolumeSlider2" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("6_0l8wx")
+theme_override_icons/grabber_highlight = ExtResource("6_0l8wx")
+theme_override_styles/slider = SubResource("StyleBoxLine_adu2g")
+value = 25.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 595.5
+offset_top = 615.0
+offset_right = 684.5
+offset_bottom = 660.0
+text = "MADE BY
+"
+label_settings = SubResource("LabelSettings_rlg4b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 458.5
+offset_top = 655.0
+offset_right = 821.5
+offset_bottom = 695.0
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "COMBATEREAK"
+label_settings = SubResource("LabelSettings_omq0y")
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "GLASSODERP"
+label_settings = SubResource("LabelSettings_agesy")
+
+[node name="Label3" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "YOMAG"
+label_settings = SubResource("LabelSettings_mdp32")
+
+[node name="Quit Game" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 507.0
+offset_top = 557.0
+offset_right = 769.0
+offset_bottom = 627.0
 texture_normal = ExtResource("2_adu2g")
 texture_pressed = ExtResource("3_0l8wx")
 texture_hover = ExtResource("4_2r307")
 
 [connection signal="pressed" from="VBoxContainer/PlayGame" to="." method="_on_start_game"]
 [connection signal="value_changed" from="VBoxContainer/VolumeSlider" to="." method="_on_volume_changed"]
-[connection signal="pressed" from="VBoxContainer/Quit Game" to="." method="_on_game_quit"]
+[connection signal="value_changed" from="VBoxContainer/VolumeSlider2" to="." method="_on_volume_changed"]
+[connection signal="pressed" from="Quit Game" to="." method="_on_game_quit"]

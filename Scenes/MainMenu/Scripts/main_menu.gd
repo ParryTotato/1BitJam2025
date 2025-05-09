@@ -1,7 +1,7 @@
 extends Control
 
 @onready var volume_slider = $VBoxContainer/VolumeSlider
-@onready var volume_label = $VBoxContainer/VolumeValueLabel
+@onready var volume_label = $VBoxContainer/HBoxContainer/VolumeValueLabel
 
 func _ready():
 	# Sets the volume level to the default value of slider (30 at time of writing)

@@ -17,6 +17,7 @@ func _ready():
 	Messenger.game_continued.connect(_on_game_continued)
 	Messenger.level_completed.connect(_on_level_completed)
 	Messenger.coin_collected.connect(_on_coin_collected)
+	Messenger.level_reset.connect(_on_level_reset)
 
 func show_main_menu():
 	timer_label.visible = false
@@ -82,3 +83,6 @@ func load_level(level: String) -> void:
 
 func _on_coin_collected():
 	$CoinCollectSound.play()
+
+func _on_level_reset():
+	timer.start()

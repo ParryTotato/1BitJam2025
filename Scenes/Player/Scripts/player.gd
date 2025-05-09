@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var move_speed:= 0.2
+@onready var tether_line = $Line2D
 
 #Flags
 var grid_size := 64
@@ -30,6 +31,9 @@ func _ready():
 	
 	Messenger.upgrades_verified.connect(_on_upgrades_verified)
 
+func _process(_delta):
+	if translocator:
+		update_translocator_tether()
 
 func _physics_process(_delta):
 	if is_moving or is_pushing:
@@ -125,25 +129,36 @@ func handle_magnet():
 	)
 	var result = space_state.intersect_ray(query)
 	
-	print(result)
-	
 	if result and result.collider.has_method("pull"):
 		result.collider.pull(pull_direction, self)
-	
-func reset_translocator():
-	if translocator != null:
-		translocator.disappear()
-		translocator = null
+		
 	
 func handle_translocator():
 	if translocator == null:
 		translocator = TRANSLOCATOR_SCENE.instantiate()
 		translocator.position = position
 		get_parent().add_child(translocator)
+		tether_line.clear_points()
+		tether_line.add_point(Vector2.ZERO)
+		tether_line.add_point(to_local(translocator.position))
+		tether_line.visible = true
 	else:
 		position = translocator.position
 		target_position = position
 		reset_translocator()
+	
+	
+func reset_translocator():
+	tether_line.clear_points()
+	tether_line.visible = false
+	if translocator != null:
+		translocator.disappear()
+		translocator = null
+	
+	
+func update_translocator_tether():
+	tether_line.set_point_position(0, Vector2.ZERO)
+	tether_line.set_point_position(1, to_local(translocator.position))
 	
 func _on_kick_upgraded():
 	has_kick_boots = true

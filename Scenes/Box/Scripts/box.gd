@@ -9,8 +9,6 @@ var being_pushed = false
 func push(direction: Vector2, pusher: Node, kick_boots_active: bool) -> bool:
 	if being_pushed:
 		return false
-	
-	$AudioStreamPlayer.play()
 		
 	being_pushed = true
 	var push_distance = direction.normalized() * grid_size
@@ -60,6 +58,7 @@ func push(direction: Vector2, pusher: Node, kick_boots_active: bool) -> bool:
 
 func _on_push_complete():
 	being_pushed = false
+	$BoxPushSound.play()
 	emit_signal("push_completed")
 	
 func pull(direction: Vector2, puller: Node):

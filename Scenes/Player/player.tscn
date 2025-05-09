@@ -327,3 +327,10 @@ frame_progress = 0.389918
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_e08e2")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(192, 64, 512, 64)
+default_color = Color(0.737255, 0.737255, 0.737255, 1)
+texture_mode = 1
+sharp_limit = 0.0
+round_precision = 1

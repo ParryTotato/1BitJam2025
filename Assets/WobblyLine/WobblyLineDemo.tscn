@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dsec02wampcr1"]
 
-[ext_resource type="Shader" uid="uid://w60wp1hhxnix" path="res://Assets/WooblyLine/wobbly_waves.tres" id="1_mpp88"]
+[ext_resource type="Shader" uid="uid://w60wp1hhxnix" path="res://Assets/WobblyLine/wobbly_waves.tres" id="1_mpp88"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8uh7m"]
 shader = ExtResource("1_mpp88")
@@ -59,6 +59,7 @@ shader_parameter/OutlineFeather = 0.05
 [node name="Line2D" type="Line2D" parent="."]
 material = SubResource("ShaderMaterial_8uh7m")
 position = Vector2(-332, -108)
+scale = Vector2(1, 0.997668)
 points = PackedVector2Array(192, 64, 512, 64)
 width = 20.0
 default_color = Color(0.737255, 0.737255, 0.737255, 1)

@@ -36,13 +36,13 @@ func _physics_process(_delta):
 		return
 		
 	var input_dir := Vector2.ZERO
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("left"):
 		input_dir.x = -1
-	elif Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("right"):
 		input_dir.x = 1
-	elif Input.is_action_pressed("ui_up"):
+	elif Input.is_action_pressed("up"):
 		input_dir.y = -1
-	elif Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("down"):
 		input_dir.y = 1
 	elif has_translocator and Input.is_action_just_pressed("translocate"):
 		handle_translocator()

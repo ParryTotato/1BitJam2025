@@ -4,15 +4,15 @@ extends Control
 var coin_count: int = 0
 var coin_spent: int = 0
 var coin_multiplier: int = 0
-var coin_mult_per_upgrade_tier: int = 2
+var coin_mult_per_upgrade_tier: int = 1
 var cost_mult_per_upgrade_tier: int = 2
 
 var upgrades_default: Dictionary = {
 	"TimerDuration": {"tier": 0, "cap": 10, "cost": 2},
-	"CoinMultiplier": {"tier": 0, "cap": 10, "cost": 2},
+	"CoinMultiplier": {"tier": 0, "cap": 10, "cost": 4},
 	"Kick": {"tier": 0, "cap": 1, "cost": 10},
-	"Magnet": {"tier": 0, "cap": 1, "cost": 10},
-	"Translocator": {"tier": 0, "cap": 1, "cost": 10}
+	"Magnet": {"tier": 0, "cap": 1, "cost": 15},
+	"Translocator": {"tier": 0, "cap": 1, "cost": 20}
 }
 
 var upgrades: Dictionary = {
@@ -55,7 +55,7 @@ func purchase_upgrade(type: String) -> void:
 	if upgrades[type]["tier"] == upgrades[type]["cap"]:
 		upgrades[type]["cost"] = "0"
 	else:
-		upgrades[type]["cost"] *= cost_mult_per_upgrade_tier
+		upgrades[type]["cost"] += cost_mult_per_upgrade_tier
 	
 	print(type + " Tier: " + str(upgrades[type]["tier"]))
 	
@@ -143,7 +143,7 @@ func _on_continue_pressed() -> void:
 
 func _on_coin_collected() -> void:
 	if coin_multiplier:
-		coin_count += 1 * coin_multiplier
+		coin_count += 1 + coin_multiplier
 	else:
 		coin_count += 1
 		

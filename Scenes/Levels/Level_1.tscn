@@ -15,10 +15,10 @@ position = Vector2(928, 159)
 position = Vector2(288, 224)
 
 [node name="Coin" parent="." index="2"]
-position = Vector2(928, 351)
+position = Vector2(928, 288)
 
 [node name="Coin2" parent="." index="3" instance=ExtResource("3_ybqp2")]
-position = Vector2(928, 415)
+position = Vector2(608, 224)
 
 [node name="Player" parent="." index="4"]
 position = Vector2(928, 544)

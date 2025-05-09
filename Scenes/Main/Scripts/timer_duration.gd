@@ -1,9 +1,9 @@
 class_name TimerDuration
 extends Timer
 
-const DEFAULT_DURATION: float = 3.0
+const DEFAULT_DURATION: float = 4
 
-var duration_per_upgrade: float = 3.0
+var duration_per_upgrade: float = 2.0
 
 @onready var td_label: Label = $TimerDurationLabel
 

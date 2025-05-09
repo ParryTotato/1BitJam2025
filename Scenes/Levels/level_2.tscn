@@ -15,10 +15,10 @@ position = Vector2(352, 224)
 position = Vector2(992, 544)
 
 [node name="Coin" parent="." index="2"]
-position = Vector2(416, 544)
+position = Vector2(608, 544)
 
 [node name="Coin2" parent="." index="3" instance=ExtResource("3_ovj6s")]
-position = Vector2(480, 544)
+position = Vector2(544, 544)
 
 [node name="Coin3" parent="." index="4" instance=ExtResource("3_ovj6s")]
 position = Vector2(352, 352)

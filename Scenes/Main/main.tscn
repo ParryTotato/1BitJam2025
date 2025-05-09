@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bh8cpqp8e8p50"]
+[gd_scene load_steps=13 format=3 uid="uid://bh8cpqp8e8p50"]
 
 [ext_resource type="Script" uid="uid://dikh1o0j2gd5r" path="res://Scenes/Main/Scripts/main.gd" id="1_xlvfx"]
 [ext_resource type="Texture2D" uid="uid://eqgo2woi2mbe" path="res://Assets/Art/spr_stars.png" id="3_y3v7k"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://d24ipw3jvtda6" path="res://Scenes/Main/Scripts/coin_count.gd" id="7_imbg2"]
 [ext_resource type="Script" uid="uid://otgwvdi4bwxd" path="res://Scenes/Main/Scripts/timer_duration.gd" id="7_xlvfx"]
 [ext_resource type="FontFile" uid="uid://ba7dpcyndctpw" path="res://Assets/FuturaND-Bold.otf" id="8_hryqi"]
+[ext_resource type="PackedScene" uid="uid://p5r8m728jooc" path="res://Scenes/MainMenu/main_menu.tscn" id="8_imbg2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hryqi"]
 particles_animation = true
@@ -47,6 +48,7 @@ anim_speed_min = 1.0
 anim_speed_max = 1.0
 
 [node name="Game" type="Node2D" parent="."]
+visible = false
 
 [node name="Coin" type="Sprite2D" parent="."]
 position = Vector2(553, 29)
@@ -94,5 +96,7 @@ metadata/_edit_lock_ = true
 [node name="UpgradeShop" parent="UI" instance=ExtResource("7_6t3k2")]
 visible = false
 layout_mode = 1
+
+[node name="MainMenu" parent="UI" instance=ExtResource("8_imbg2")]
 
 [connection signal="timeout" from="TimerDuration" to="." method="_on_timer_duration_timeout"]

@@ -18,8 +18,10 @@ func _process(_delta):
 		reset_level()
 	
 	if goals_filled == goal_count:
+		goals_filled = 0
 		Messenger.level_completed.emit(self.name)
 		
+	
 func _register_objects():
 	for child in get_children(true):
 		if child is CharacterBody2D or child is Area2D:
@@ -37,8 +39,8 @@ func reset_level():
 			if child.has_method("reset_player"):
 				child.reset_player()
 			
-			if child.has_method("re_enable_coin"):
-				child.re_enable_coin()
+			#if child.has_method("re_enable_coin"):
+				#child.re_enable_coin()
 	set_physics_process(true)
 
 	goals_filled = 0

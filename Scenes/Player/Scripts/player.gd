@@ -15,7 +15,7 @@ var has_translocator := false
 var push_force = 64
 
 var translocator: Sprite2D = null
-const TRANSLOCATOR_SCENE = preload("res://Scenes/Translocator/translocator.tscn")
+const TRANSLOCATOR_SCENE = preload("res://Scenes/Translocator/translocator.tscn") as PackedScene
 
 func _ready():
 	starting_position = position
@@ -70,7 +70,7 @@ func _physics_process(_delta):
 				result.collider.push_completed.connect(_on_push_complete, CONNECT_ONE_SHOT)
 	elif last_direction != "idle":
 		$AnimatedSprite2D.stop()
-		$AnimatedSprite2D.frame = 0
+		$AnimatedSprite2D.frame = 7
 		last_direction = "idle"
 
 func _play_move_animation(input_dir: Vector2):

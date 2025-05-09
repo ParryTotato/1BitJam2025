@@ -5,28 +5,34 @@ extends Node2D
 @onready var timer: Timer = $TimerDuration
 @onready var timer_label: Label = $TimerDuration/TimerDurationLabel
 @onready var upgrade_shop: Control = $UI/UpgradeShop
+@onready var main_menu: Control = $UI/MainMenu
 
+const MAIN_MENU_SCENE = preload("res://Scenes/MainMenu/main_menu.tscn") as PackedScene
+const LEVEL_1 = preload("res://Scenes/Levels/Level_1.tscn") as PackedScene
 
 func _ready():
-	var level_1 = load("res://Scenes/Levels/Level_1.tscn") as PackedScene
-	var level_1_instance = level_1.instantiate()
-	game.add_child(level_1_instance)
+	show_main_menu()
 	
 	Messenger.game_continued.connect(_on_game_continued)
 	Messenger.level_completed.connect(_on_level_completed)
 	Messenger.coin_collected.connect(_on_coin_collected)
+
+func show_main_menu():
+	main_menu.visible = true
+	upgrade_shop.visible = false
+	game.visible = false
+
+func start_game() -> void:
+	main_menu.visible = false
+	game.visible = true
+	
+	for child in game.get_children():
+		child.queue_free()
+	
+	var level_1_instance = LEVEL_1.instantiate()
+	game.add_child(level_1_instance)
 	timer.start()
-
-
-#func _unhandled_input(event: InputEvent) -> void:
-	#if event.is_action_pressed("ui_accept"):
-		#upgrade_shop.visible = true
-#
-	#if event.is_action_pressed("ui_cancel"):
-		#upgrade_shop.visible = false
-
-# TODO add Func for game_continued signal
-
+	timer_label.visible = true
 
 func _on_timer_duration_timeout() -> void:
 	if upgrade_shop.visible:

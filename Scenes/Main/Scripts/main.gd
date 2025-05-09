@@ -8,7 +8,6 @@ extends Node2D
 @onready var main_menu: Control = $UI/MainMenu
 
 const MAIN_MENU_SCENE = preload("res://Scenes/MainMenu/main_menu.tscn") as PackedScene
-const LEVEL_1 = preload("res://Scenes/Levels/Level_1.tscn") as PackedScene
 
 func _ready():
 	show_main_menu()
@@ -26,11 +25,7 @@ func start_game() -> void:
 	main_menu.visible = false
 	game.visible = true
 	
-	for child in game.get_children():
-		child.queue_free()
-	
-	var level_1_instance = LEVEL_1.instantiate()
-	game.add_child(level_1_instance)
+	load_level("res://Scenes/Levels/Level_1.tscn")
 	timer.start()
 	timer_label.visible = true
 

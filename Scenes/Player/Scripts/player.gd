@@ -136,7 +136,7 @@ func _on_game_continued():
 	set_physics_process(true)
 
 func _on_level_loaded():
-	set_physics_process(false)
+	set_physics_process(true)
 
 func _on_upgrades_verified(upgrades: Dictionary):
 	if upgrades["Kick"]["tier"] == 0:

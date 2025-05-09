@@ -1,7 +1,7 @@
 class_name UpgradeShop
 extends Control
 
-var coin_count: int = 40
+var coin_count: int = 0
 var coin_spent: int = 0
 var coin_multiplier: int = 0
 var coin_mult_per_upgrade_tier: int = 2
@@ -122,6 +122,7 @@ func _on_translocator_pressed() -> void:
 func _on_refund_pressed() -> void:
 	coin_count += coin_spent
 	coin_spent = 0
+	coin_multiplier = 0
 	
 	for key in upgrades_default.keys():
 		upgrades[key] = upgrades_default[key].duplicate(true)

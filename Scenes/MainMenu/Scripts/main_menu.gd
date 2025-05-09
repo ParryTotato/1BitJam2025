@@ -1,11 +1,11 @@
 extends Control
 
 @onready var volume_slider = $VBoxContainer/VolumeSlider
-@onready var volume_label = $VBoxContainer/VolumeValueLabel
+@onready var volume_label = $VBoxContainer/HBoxContainer/VolumeValueLabel
 
 func _ready():
-	var current_db = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))
-	volume_slider.value = _db_to_percent(current_db)
+	#var current_db = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))
+	#volume_slider.value = _db_to_percent(current_db)
 	volume_label.text = "%d%%" % volume_slider.value
 
 func _on_volume_changed(value: float):

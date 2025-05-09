@@ -48,7 +48,6 @@ anim_speed_min = 1.0
 anim_speed_max = 1.0
 
 [node name="Game" type="Node2D" parent="."]
-visible = false
 
 [node name="Coin" type="Sprite2D" parent="."]
 position = Vector2(553, 29)

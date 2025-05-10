@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://p5r8m728jooc"]
+[gd_scene load_steps=31 format=3 uid="uid://p5r8m728jooc"]
 
 [ext_resource type="Script" uid="uid://ca2nfae8kyxdt" path="res://Scenes/MainMenu/Scripts/main_menu.gd" id="1_adu2g"]
 [ext_resource type="Texture2D" uid="uid://brio6fyoshhsy" path="res://Scenes/UpgradeShop/Assets/Art/btn_continue.png" id="2_adu2g"]
@@ -8,8 +8,52 @@
 [ext_resource type="Texture2D" uid="uid://cdyshqxjxcqwy" path="res://Scenes/MainMenu/Assets/Art/btn_play_pressed.png" id="3_agesy"]
 [ext_resource type="Texture2D" uid="uid://cm0xhtk4vr4bi" path="res://Scenes/UpgradeShop/Assets/Art/btn_continue_hovered.png" id="4_2r307"]
 [ext_resource type="Texture2D" uid="uid://bk1vyntp6b8ji" path="res://Scenes/MainMenu/Assets/Art/btn_play_hovered.png" id="4_mdp32"]
+[ext_resource type="Texture2D" uid="uid://betyjdog03rgr" path="res://Scenes/MainMenu/Assets/Art/spr_hourglass.png" id="4_w5buf"]
 [ext_resource type="FontFile" uid="uid://ba7dpcyndctpw" path="res://Assets/FuturaND-Bold.otf" id="5_0l8wx"]
 [ext_resource type="Texture2D" uid="uid://breowtnacsawn" path="res://Scenes/MainMenu/Assets/Art/spr_box_slider.png" id="6_0l8wx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdp32"]
+atlas = ExtResource("4_w5buf")
+region = Rect2(0, 0, 33, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlg4b"]
+atlas = ExtResource("4_w5buf")
+region = Rect2(33, 0, 33, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5buf"]
+atlas = ExtResource("4_w5buf")
+region = Rect2(66, 0, 33, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c6cs"]
+atlas = ExtResource("4_w5buf")
+region = Rect2(99, 0, 33, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo6ee"]
+atlas = ExtResource("4_w5buf")
+region = Rect2(132, 0, 33, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_os7au"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdp32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlg4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5buf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c6cs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fo6ee")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0l8wx"]
 font_size = 64
@@ -84,13 +128,17 @@ emission_shape = 3
 emission_rect_extents = Vector2(576, 0)
 gravity = Vector2(0, 500)
 
+[node name="Hourglass" type="AnimatedSprite2D" parent="."]
+position = Vector2(703, 94)
+sprite_frames = SubResource("SpriteFrames_os7au")
+
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
 offset_left = 396.5
 offset_top = 64.0
 offset_right = 883.5
 offset_bottom = 181.0
-text = "OVERTIME"
+text = "OVERT  ME"
 label_settings = SubResource("LabelSettings_0l8wx")
 horizontal_alignment = 1
 

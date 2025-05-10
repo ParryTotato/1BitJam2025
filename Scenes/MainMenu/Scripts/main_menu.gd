@@ -9,6 +9,8 @@ func _ready():
 	# Sets the volume level to the default value of slider
 	_on_sfx_volume_changed(sfx_volume_slider.value)
 	_on_music_volume_changed(music_volume_slider.value)
+	
+	$Hourglass.play()
 
 func _on_sfx_volume_changed(value: float):
 	_set_audio_level(value, "SFX")

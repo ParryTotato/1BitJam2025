@@ -1,7 +1,7 @@
 class_name UpgradeShop
 extends Control
 
-var coin_count: int = 300
+var coin_count: int = 0
 var coin_spent: int = 0
 var coin_multiplier: int = 0
 var coin_mult_per_upgrade_tier: int = 1

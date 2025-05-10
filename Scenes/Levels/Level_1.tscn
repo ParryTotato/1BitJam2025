@@ -1,23 +1,23 @@
-[gd_scene load_steps=5 format=4 uid="uid://cqhk3a430hjol"]
+[gd_scene load_steps=5 format=4 uid="uid://wlw1pxxokmco"]
 
-[ext_resource type="PackedScene" uid="uid://tckltt0bntyn" path="res://Scenes/BaseLevel/base_level.tscn" id="1_87l2y"]
-[ext_resource type="PackedScene" uid="uid://bjuhttikb3pck" path="res://Scenes/Goal/goal.tscn" id="2_qpfou"]
-[ext_resource type="PackedScene" uid="uid://bnva6bahaqsv3" path="res://Scenes/Coin/coin.tscn" id="3_ybqp2"]
-[ext_resource type="PackedScene" uid="uid://cjucuym23y50g" path="res://Scenes/Box/box.tscn" id="4_iyh3f"]
+[ext_resource type="PackedScene" uid="uid://tckltt0bntyn" path="res://Scenes/BaseLevel/base_level.tscn" id="1_iixi8"]
+[ext_resource type="PackedScene" uid="uid://bjuhttikb3pck" path="res://Scenes/Goal/goal.tscn" id="2_cyadu"]
+[ext_resource type="PackedScene" uid="uid://bnva6bahaqsv3" path="res://Scenes/Coin/coin.tscn" id="3_xgxfi"]
+[ext_resource type="PackedScene" uid="uid://cjucuym23y50g" path="res://Scenes/Box/box.tscn" id="4_5f3p6"]
 
-[node name="Level1" instance=ExtResource("1_87l2y")]
+[node name="Level1" instance=ExtResource("1_iixi8")]
 tile_map_data = PackedByteArray("AAAFAAIAAQAHAAEAAAAFAAQAAQAHAAEAAAAGAAIAAQAHAAEAAAAGAAQAAQAHAAEAAAAHAAIAAQAHAAEAAAAIAAIAAQAHAAEAAAAIAAQAAQAHAAEAAAAJAAIAAQAHAAEAAAAJAAQAAQAHAAEAAAAKAAIAAQAHAAEAAAAKAAQAAQAHAAEAAAAHAAQAAQAHAAEAAAAEAAQAAQAHAAEAAAAEAAIAAQAHAAEAAAADAAQAAQAAAAoAAAADAAMAAQAHAAAAAAADAAIAAQAAAAgAAAALAAQAAQAHAAEAAAALAAIAAQAHAAEAAAANAAEAAQAAAAgAAAANAAkAAQAAAAoAAAAOAAEAAQAHAAEAAAAOAAkAAQAHAAEAAAANAAIAAQACAAoAAAANAAQAAQACAAgAAAANAAUAAQAHAAAAAAANAAYAAQAHAAAAAAANAAcAAQAHAAAAAAANAAgAAQAHAAAAAAAPAAEAAQACAAgAAAAPAAIAAQAHAAAAAAAPAAMAAQAHAAAAAAAPAAQAAQAHAAAAAAAPAAUAAQAHAAAAAAAPAAYAAQAHAAAAAAAPAAcAAQAHAAAAAAAPAAgAAQAHAAAAAAAPAAkAAQACAAoAAAAMAAQAAQAHAAEAAAAMAAIAAQAHAAEAAAA=")
 
 [node name="Goal" parent="." index="0"]
 position = Vector2(928, 159)
 
-[node name="Goal2" parent="." index="1" instance=ExtResource("2_qpfou")]
+[node name="Goal2" parent="." index="1" instance=ExtResource("2_cyadu")]
 position = Vector2(288, 224)
 
 [node name="Coin" parent="." index="2"]
 position = Vector2(928, 288)
 
-[node name="Coin2" parent="." index="3" instance=ExtResource("3_ybqp2")]
+[node name="Coin2" parent="." index="3" instance=ExtResource("3_xgxfi")]
 position = Vector2(608, 224)
 
 [node name="Player" parent="." index="4"]
@@ -26,5 +26,5 @@ position = Vector2(928, 544)
 [node name="Box" parent="." index="5"]
 position = Vector2(928, 480)
 
-[node name="Box2" parent="." index="6" instance=ExtResource("4_iyh3f")]
+[node name="Box2" parent="." index="6" instance=ExtResource("4_5f3p6")]
 position = Vector2(544, 224)

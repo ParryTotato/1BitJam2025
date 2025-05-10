@@ -1,8 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://c32gh7vy38dm8"]
+[gd_scene load_steps=4 format=3 uid="uid://c32gh7vy38dm8"]
 
 [ext_resource type="Texture2D" uid="uid://4te8bc36c46d" path="res://Scenes/Translocator/Assets/Art/spr_translocator.png" id="1_nbc01"]
 [ext_resource type="Script" uid="uid://2fb87o0m6yr7" path="res://Scenes/Translocator/Scripts/translocator.gd" id="2_3lp2v"]
 
-[node name="Translocator" type="Sprite2D" groups=["translocator"]]
-texture = ExtResource("1_nbc01")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbc01"]
+size = Vector2(30, 30)
+
+[node name="Translocator" type="CharacterBody2D" groups=["translocator"]]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("2_3lp2v")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nbc01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nbc01")

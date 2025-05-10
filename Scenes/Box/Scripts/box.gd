@@ -25,9 +25,8 @@ func push(direction: Vector2, pusher: Node, kick_boots_active: bool) -> bool:
 	var target_pos = position + push_distance * (3 if kick_boots_active else 1)
 	var space_state = get_world_2d().direct_space_state
 	
-	# Check kick distances in descending order (3 → 2 → 1)
 	if kick_boots_active:
-		var kick_distances = [3, 2, 1]  # Ordered from longest to shortest
+		var kick_distances = [3, 2, 1]
 		var found_valid_push = false
 		
 		for distance in kick_distances:

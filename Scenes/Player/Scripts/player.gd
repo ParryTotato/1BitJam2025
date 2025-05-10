@@ -15,7 +15,7 @@ var has_magnet := false
 var has_translocator := false
 var push_force = 64
 
-var translocator: Sprite2D = null
+var translocator: CharacterBody2D = null
 const TRANSLOCATOR_SCENE = preload("res://Scenes/Translocator/translocator.tscn") as PackedScene
 
 func _ready():

@@ -31,6 +31,8 @@ func start_game() -> void:
 	main_menu.visible = false
 	game.visible = true
 	
+	$InGameMusic.play()
+	
 	load_level("res://Scenes/Levels/Level_1.tscn")
 	timer.start()
 	timer_label.visible = true

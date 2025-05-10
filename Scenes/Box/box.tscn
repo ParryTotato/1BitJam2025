@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjucuym23y50g"]
+[gd_scene load_steps=6 format=3 uid="uid://cjucuym23y50g"]
 
 [ext_resource type="Script" uid="uid://dcv7r3c6ooga3" path="res://Scenes/Box/Scripts/box.gd" id="1_8rww4"]
 [ext_resource type="Texture2D" uid="uid://cg4bfn5s2k0vt" path="res://Scenes/Box/Assets/Art/spr_box.png" id="2_cmmx2"]
 [ext_resource type="AudioStream" uid="uid://dvur488x7mbj5" path="res://Scenes/Box/Assets/Audio/BoxPush.wav" id="3_cmmx2"]
+
+[sub_resource type="Curve" id="Curve_cmmx2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1bgf"]
 size = Vector2(58, 58)
@@ -10,6 +14,19 @@ size = Vector2(58, 58)
 [node name="Box" type="CharacterBody2D" groups=["box"]]
 script = ExtResource("1_8rww4")
 metadata/_edit_group_ = true
+
+[node name="PushParticles" type="CPUParticles2D" parent="."]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+spread = 35.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 250.0
+scale_amount_min = 2.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_cmmx2")
+color = Color(0.737255, 0.737255, 0.737255, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_cmmx2")

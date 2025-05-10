@@ -1,7 +1,8 @@
-[gd_scene load_steps=45 format=3 uid="uid://b80me8jbqhh2t"]
+[gd_scene load_steps=47 format=3 uid="uid://b80me8jbqhh2t"]
 
 [ext_resource type="Script" uid="uid://dnwmx7teo0u2t" path="res://Scenes/Player/Scripts/player.gd" id="1_06tpx"]
 [ext_resource type="Texture2D" uid="uid://dyyc2dfakhggy" path="res://Scenes/Player/Assets/Art/spr_character.png" id="2_htcer"]
+[ext_resource type="Shader" uid="uid://w60wp1hhxnix" path="res://Assets/WobblyLine/wobbly_waves.tres" id="3_xpcdj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3d8c"]
 atlas = ExtResource("2_htcer")
@@ -314,6 +315,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e08e2"]
 size = Vector2(14, 26)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpcdj"]
+shader = ExtResource("3_xpcdj")
+shader_parameter/OutlineColor = Color(0.101961, 0.109804, 0.117647, 1)
+shader_parameter/WobbleIntensity = 1.5
+shader_parameter/WobbleSpeed = 5.0
+shader_parameter/WobbleFrequency = 1.0
+shader_parameter/Frequency = 20.0
+shader_parameter/Speed = 0.0
+shader_parameter/Thickness = 1.0
+shader_parameter/Feather = 0.05
+shader_parameter/OutlineThickness = 1.0
+shader_parameter/OutlineFeather = 0.05
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_06tpx")
@@ -329,7 +343,9 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_e08e2")
 
 [node name="Line2D" type="Line2D" parent="."]
+material = SubResource("ShaderMaterial_xpcdj")
 points = PackedVector2Array(192, 64, 512, 64)
+width = 30.0
 default_color = Color(0.737255, 0.737255, 0.737255, 1)
 texture_mode = 1
 sharp_limit = 0.0

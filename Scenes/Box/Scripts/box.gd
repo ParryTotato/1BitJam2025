@@ -5,12 +5,22 @@ signal push_completed
 
 var grid_size = 64
 var being_pushed = false
+@onready var push_particles: CPUParticles2D = $PushParticles
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 
 func push(direction: Vector2, pusher: Node, kick_boots_active: bool) -> bool:
 	if being_pushed:
 		return false
+	
+	#Scales the box as it gets pushed (polish)	
+	sprite_2d.scale = Vector2(0.95,0.95)
+	var tween = create_tween()
+	tween.tween_property(sprite_2d, "scale", Vector2(1.0,1.0), 0.1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 		
 	being_pushed = true
+	push_particles.direction = -direction
+	push_particles.restart()
 	var push_distance = direction.normalized() * grid_size
 	var target_pos = position + push_distance * (3 if kick_boots_active else 1)
 	var space_state = get_world_2d().direct_space_state

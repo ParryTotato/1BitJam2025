@@ -8,7 +8,7 @@ var coin_mult_per_upgrade_tier: int = 1
 var cost_mult_per_upgrade_tier: int = 2
 
 var upgrades_default: Dictionary = {
-	"TimerDuration": {"tier": 0, "cap": 10, "cost": 2},
+	"TimerDuration": {"tier": 0, "cap": 20, "cost": 2},
 	"CoinMultiplier": {"tier": 0, "cap": 10, "cost": 4},
 	"Kick": {"tier": 0, "cap": 1, "cost": 10},
 	"Magnet": {"tier": 0, "cap": 1, "cost": 15},

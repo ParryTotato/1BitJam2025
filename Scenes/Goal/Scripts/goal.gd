@@ -13,4 +13,5 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body is Box:
 		filled = false
+		Messenger.goal_unfilled.emit()
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckphg4em2upsh"]
+[gd_scene load_steps=14 format=3 uid="uid://ckphg4em2upsh"]
 
 [ext_resource type="Script" uid="uid://dsckpjthppqsx" path="res://Scenes/UpgradeShop/Scripts/upgrade_shop.gd" id="1_407bl"]
 [ext_resource type="Texture2D" uid="uid://bonrsl0co3i0t" path="res://Scenes/UpgradeShop/Assets/Art/upgrade_screen_back.png" id="2_0w830"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://brio6fyoshhsy" path="res://Scenes/UpgradeShop/Assets/Art/btn_continue.png" id="10_sfqks"]
 [ext_resource type="Texture2D" uid="uid://c86udavrvjk1y" path="res://Scenes/UpgradeShop/Assets/Art/btn_continue_pressed.png" id="11_n3s3v"]
 [ext_resource type="Texture2D" uid="uid://cm0xhtk4vr4bi" path="res://Scenes/UpgradeShop/Assets/Art/btn_continue_hovered.png" id="12_g2afw"]
+[ext_resource type="AudioStream" uid="uid://ck5ji06hn7hlr" path="res://Assets/Audio/UI_Hover.wav" id="13_ynwtr"]
 
 [node name="UpgradeShop" type="Control"]
 layout_mode = 3
@@ -227,10 +228,22 @@ texture_normal = ExtResource("10_sfqks")
 texture_pressed = ExtResource("11_n3s3v")
 texture_hover = ExtResource("12_g2afw")
 
+[node name="UIHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_ynwtr")
+volume_db = 5.0
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="VBoxContainer/TimerDuration" to="." method="_on_timer_duration_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/TimerDuration" to="." method="_on_timer_duration_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/CoinMultiplier" to="." method="_on_coin_multiplier_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/CoinMultiplier" to="." method="_on_coin_multiplier_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Kick" to="." method="_on_kick_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Kick" to="." method="_on_kick_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Magnet" to="." method="_on_magnet_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Magnet" to="." method="_on_magnet_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Translocator" to="." method="_on_translocator_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Translocator" to="." method="_on_translocator_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/Refund" to="." method="_on_magnet_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/Refund" to="." method="_on_refund_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/Continue" to="." method="_on_magnet_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/Continue" to="." method="_on_continue_pressed"]

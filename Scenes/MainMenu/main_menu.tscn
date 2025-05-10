@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://p5r8m728jooc"]
+[gd_scene load_steps=34 format=3 uid="uid://p5r8m728jooc"]
 
 [ext_resource type="Script" uid="uid://ca2nfae8kyxdt" path="res://Scenes/MainMenu/Scripts/main_menu.gd" id="1_adu2g"]
 [ext_resource type="Texture2D" uid="uid://brio6fyoshhsy" path="res://Scenes/UpgradeShop/Assets/Art/btn_continue.png" id="2_adu2g"]
@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://betyjdog03rgr" path="res://Scenes/MainMenu/Assets/Art/spr_hourglass.png" id="4_w5buf"]
 [ext_resource type="FontFile" uid="uid://ba7dpcyndctpw" path="res://Assets/FuturaND-Bold.otf" id="5_0l8wx"]
 [ext_resource type="Texture2D" uid="uid://breowtnacsawn" path="res://Scenes/MainMenu/Assets/Art/spr_box_slider.png" id="6_0l8wx"]
+[ext_resource type="Texture2D" uid="uid://cg3pae4ycqp6l" path="res://Scenes/MainMenu/Assets/Art/spr_box_slider_Focused.png" id="9_6c6cs"]
 [ext_resource type="AudioStream" uid="uid://f3ehe1ivbpl" path="res://Assets/Audio/Sky Game Menu.wav" id="12_rlg4b"]
+[ext_resource type="AudioStream" uid="uid://ck5ji06hn7hlr" path="res://Assets/Audio/UI_Hover.wav" id="13_w5buf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mdp32"]
 atlas = ExtResource("4_w5buf")
@@ -187,7 +189,7 @@ horizontal_alignment = 2
 [node name="SFXVolumeSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("6_0l8wx")
-theme_override_icons/grabber_highlight = ExtResource("6_0l8wx")
+theme_override_icons/grabber_highlight = ExtResource("9_6c6cs")
 theme_override_styles/slider = SubResource("StyleBoxLine_adu2g")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_rlg4b")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_w5buf")
@@ -215,7 +217,7 @@ horizontal_alignment = 2
 layout_mode = 2
 theme = SubResource("Theme_agesy")
 theme_override_icons/grabber = ExtResource("6_0l8wx")
-theme_override_icons/grabber_highlight = ExtResource("6_0l8wx")
+theme_override_icons/grabber_highlight = ExtResource("9_6c6cs")
 theme_override_styles/slider = SubResource("StyleBoxLine_adu2g")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_agesy")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_mdp32")
@@ -272,7 +274,15 @@ texture_hover = ExtResource("4_2r307")
 stream = ExtResource("12_rlg4b")
 bus = &"Music"
 
+[node name="UIHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_w5buf")
+volume_db = 5.0
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="VBoxContainer/PlayGame" to="." method="_on_play_game_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/PlayGame" to="." method="_on_start_game"]
+[connection signal="mouse_entered" from="VBoxContainer/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_mouse_entered"]
 [connection signal="value_changed" from="VBoxContainer/SFXVolumeSlider" to="." method="_on_sfx_volume_changed"]
+[connection signal="mouse_entered" from="VBoxContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_mouse_entered"]
 [connection signal="value_changed" from="VBoxContainer/MusicVolumeSlider" to="." method="_on_music_volume_changed"]
 [connection signal="pressed" from="Quit Game" to="." method="_on_game_quit"]

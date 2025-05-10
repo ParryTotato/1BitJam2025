@@ -154,3 +154,23 @@ func _on_coin_collected() -> void:
 
 func _on_timer_duration_ended() -> void:
 	visible = true
+
+
+func _on_timer_duration_mouse_entered() -> void:
+	$UIHover.play()
+
+
+func _on_coin_multiplier_mouse_entered() -> void:
+	$UIHover.play()
+
+
+func _on_kick_mouse_entered() -> void:
+	$UIHover.play()
+
+
+func _on_magnet_mouse_entered() -> void:
+	$UIHover.play()
+
+
+func _on_translocator_mouse_entered() -> void:
+	$UIHover.play()

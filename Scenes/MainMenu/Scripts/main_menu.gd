@@ -36,3 +36,15 @@ func _on_start_game():
 
 func _on_game_quit():
 	get_tree().quit()
+
+
+func _on_play_game_mouse_entered() -> void:
+	$UIHover.play()
+
+
+func _on_sfx_volume_slider_mouse_entered() -> void:
+	$UIHover.play()
+
+
+func _on_music_volume_slider_mouse_entered() -> void:
+	$UIHover.play()

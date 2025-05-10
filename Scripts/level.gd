@@ -11,6 +11,7 @@ func _ready():
 	
 	Messenger.game_continued.connect(_on_game_continued)
 	Messenger.goal_filled.connect(_on_goal_filled)
+	Messenger.goal_unfilled.connect(_on_goal_unfilled)
 
 	
 func _process(_delta):
@@ -20,6 +21,7 @@ func _process(_delta):
 	if goals_filled == goal_count:
 		goals_filled = 0
 		Messenger.level_completed.emit(self.name)
+		print("level completed")
 		
 	
 func _register_objects():
@@ -54,3 +56,9 @@ func _on_game_continued():
 func _on_goal_filled():
 	goals_filled += 1
 	print("goal filled")
+
+
+func _on_goal_unfilled():
+	if goals_filled != 0:
+		goals_filled -= 1
+		print("goal unfilled")

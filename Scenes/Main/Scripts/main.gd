@@ -31,7 +31,7 @@ func start_game() -> void:
 	main_menu.visible = false
 	game.visible = true
 	
-	load_level("res://Scenes/Levels/Level_1.tscn")
+	load_level("res://Scenes/Levels/level_1.tscn")
 	timer.start()
 	timer_label.visible = true
 	coin_symbol.visible = true
@@ -67,6 +67,10 @@ func _on_level_completed(level_completed: String) -> void:
 			load_level("res://Scenes/Levels/level_3.tscn")
 		"Level3":
 			load_level("res://Scenes/Levels/level_4.tscn")
+		"Level4":
+			load_level("res://Scenes/Levels/level_5.tscn")
+		"Level5":
+			load_level("res://Scenes/Levels/level_6.tscn")
 		"Level7":
 			load_level("res://Scenes/Levels/level_8.tscn")
 

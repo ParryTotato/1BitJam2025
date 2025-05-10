@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://p5r8m728jooc"]
+[gd_scene load_steps=32 format=3 uid="uid://p5r8m728jooc"]
 
 [ext_resource type="Script" uid="uid://ca2nfae8kyxdt" path="res://Scenes/MainMenu/Scripts/main_menu.gd" id="1_adu2g"]
 [ext_resource type="Texture2D" uid="uid://brio6fyoshhsy" path="res://Scenes/UpgradeShop/Assets/Art/btn_continue.png" id="2_adu2g"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://betyjdog03rgr" path="res://Scenes/MainMenu/Assets/Art/spr_hourglass.png" id="4_w5buf"]
 [ext_resource type="FontFile" uid="uid://ba7dpcyndctpw" path="res://Assets/FuturaND-Bold.otf" id="5_0l8wx"]
 [ext_resource type="Texture2D" uid="uid://breowtnacsawn" path="res://Scenes/MainMenu/Assets/Art/spr_box_slider.png" id="6_0l8wx"]
+[ext_resource type="AudioStream" uid="uid://f3ehe1ivbpl" path="res://Assets/Audio/Sky Game Menu.wav" id="12_rlg4b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mdp32"]
 atlas = ExtResource("4_w5buf")
@@ -266,6 +267,10 @@ offset_bottom = 627.0
 texture_normal = ExtResource("2_adu2g")
 texture_pressed = ExtResource("3_0l8wx")
 texture_hover = ExtResource("4_2r307")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_rlg4b")
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/PlayGame" to="." method="_on_start_game"]
 [connection signal="value_changed" from="VBoxContainer/SFXVolumeSlider" to="." method="_on_sfx_volume_changed"]

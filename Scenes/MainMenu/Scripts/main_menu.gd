@@ -10,6 +10,7 @@ func _ready():
 	_on_sfx_volume_changed(sfx_volume_slider.value)
 	_on_music_volume_changed(music_volume_slider.value)
 	
+	$MenuMusic.play()
 	$Hourglass.play()
 
 func _on_sfx_volume_changed(value: float):
@@ -31,6 +32,7 @@ func _percent_to_db(percent: float) -> float:
 
 func _on_start_game():
 	get_parent().get_parent().start_game()
+	$MenuMusic.stop()
 
 func _on_game_quit():
 	get_tree().quit()

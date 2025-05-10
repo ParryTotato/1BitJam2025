@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bh8cpqp8e8p50"]
+[gd_scene load_steps=17 format=3 uid="uid://bh8cpqp8e8p50"]
 
 [ext_resource type="Script" uid="uid://dikh1o0j2gd5r" path="res://Scenes/Main/Scripts/main.gd" id="1_xlvfx"]
 [ext_resource type="Texture2D" uid="uid://eqgo2woi2mbe" path="res://Assets/Art/spr_stars.png" id="3_y3v7k"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://tv887v704saa" path="res://Assets/Audio/Music_Level_Loop.wav" id="10_imbg2"]
 [ext_resource type="AudioStream" uid="uid://cmcq7lwwrg3hb" path="res://Assets/Audio/LVL_Win.wav" id="11_hfg1r"]
 [ext_resource type="AudioStream" uid="uid://cdwrxes56o1gs" path="res://Assets/Audio/Incomplete.wav" id="12_4e4y2"]
+[ext_resource type="AudioStream" uid="uid://ctdc606ug7b5c" path="res://Assets/Audio/Bluezone_BC0305_steampunk_machine_mechanical_texture_038.wav" id="13_6t3k2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hryqi"]
 particles_animation = true
@@ -113,6 +114,11 @@ bus = &"SFX"
 
 [node name="LvlLoss" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_4e4y2")
+bus = &"SFX"
+
+[node name="PressurePlate" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_6t3k2")
+volume_db = -2.0
 bus = &"SFX"
 
 [connection signal="timeout" from="TimerDuration" to="." method="_on_timer_duration_timeout"]

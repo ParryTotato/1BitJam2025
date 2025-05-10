@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var move_speed:= 0.2
 @onready var tether_line = $Line2D
+@onready var push_particles: CPUParticles2D = $PushParticles
 
 #Flags
 var grid_size := 64
@@ -131,6 +132,9 @@ func handle_magnet():
 	
 	if result and result.collider.has_method("pull"):
 		result.collider.pull(pull_direction, self)
+		
+		push_particles.direction = pull_direction
+		push_particles.restart()
 		
 	
 func handle_translocator():

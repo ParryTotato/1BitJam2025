@@ -56,7 +56,7 @@ func _on_game_continued():
 func _on_goal_filled():
 	goals_filled += 1
 	print("goal filled")
-
+	
 
 func _on_goal_unfilled():
 	if goals_filled != 0:

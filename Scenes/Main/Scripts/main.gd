@@ -18,6 +18,7 @@ func _ready():
 	Messenger.level_completed.connect(_on_level_completed)
 	Messenger.coin_collected.connect(_on_coin_collected)
 	Messenger.level_reset.connect(_on_level_reset)
+	Messenger.goal_filled.connect(_on_goal_filled)
 
 func show_main_menu():
 	timer_label.visible = false
@@ -96,3 +97,7 @@ func _on_coin_collected():
 
 func _on_level_reset():
 	timer.start()
+	
+func _on_goal_filled():
+	$PressurePlate.play()
+	

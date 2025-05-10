@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b80me8jbqhh2t"]
+[gd_scene load_steps=48 format=3 uid="uid://b80me8jbqhh2t"]
 
 [ext_resource type="Script" uid="uid://dnwmx7teo0u2t" path="res://Scenes/Player/Scripts/player.gd" id="1_06tpx"]
 [ext_resource type="Texture2D" uid="uid://dyyc2dfakhggy" path="res://Scenes/Player/Assets/Art/spr_character.png" id="2_htcer"]
@@ -328,6 +328,10 @@ shader_parameter/Feather = 0.05
 shader_parameter/OutlineThickness = 1.0
 shader_parameter/OutlineFeather = 0.05
 
+[sub_resource type="Curve" id="Curve_xpcdj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_06tpx")
@@ -351,3 +355,16 @@ default_color = Color(0.737255, 0.737255, 0.737255, 1)
 texture_mode = 1
 sharp_limit = 0.0
 round_precision = 1
+
+[node name="PushParticles" type="CPUParticles2D" parent="."]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+spread = 35.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 250.0
+scale_amount_min = 2.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_xpcdj")
+color = Color(0.737255, 0.737255, 0.737255, 1)

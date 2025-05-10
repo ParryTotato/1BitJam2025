@@ -44,7 +44,7 @@ func _on_timer_duration_timeout() -> void:
 		return
 		
 	timer_label.visible = false
-	
+	$LvlLoss.play()
 	Messenger.timer_duration_ended.emit()
 
 
@@ -60,7 +60,7 @@ func _on_level_completed(level_completed: String) -> void:
 	
 	timer.stop()
 	timer_label.visible = false
-	
+	$LvlWin.play()
 	
 	match level_completed:
 		"Level1":

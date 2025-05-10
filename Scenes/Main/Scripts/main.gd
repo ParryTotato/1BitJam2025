@@ -62,11 +62,15 @@ func _on_level_completed(level_completed: String) -> void:
 	
 	match level_completed:
 		"Level1":
-			load_level("res://Scenes/Levels/level_2.tscn")
+			load_level("res://Scenes/Levels/level_9.tscn")
 		"Level2":
 			load_level("res://Scenes/Levels/level_3.tscn")
 		"Level3":
 			load_level("res://Scenes/Levels/level_4.tscn")
+		"Level4":
+			load_level("res://Scenes/Levels/level_5.tscn")
+		"Level6":
+			load_level("res://Scenes/Levels/level_7.tscn")
 		"Level7":
 			load_level("res://Scenes/Levels/level_8.tscn")
 

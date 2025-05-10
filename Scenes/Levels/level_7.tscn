@@ -1,5 +1,75 @@
-[gd_scene load_steps=2 format=3 uid="uid://8uol3rhbkntx"]
+[gd_scene load_steps=5 format=4 uid="uid://b8mumulqk4gst"]
 
 [ext_resource type="PackedScene" uid="uid://tckltt0bntyn" path="res://Scenes/BaseLevel/base_level.tscn" id="1_y7fa6"]
+[ext_resource type="PackedScene" uid="uid://bjuhttikb3pck" path="res://Scenes/Goal/goal.tscn" id="2_pyg1t"]
+[ext_resource type="PackedScene" uid="uid://cjucuym23y50g" path="res://Scenes/Box/box.tscn" id="3_p3g8w"]
+[ext_resource type="PackedScene" uid="uid://bnva6bahaqsv3" path="res://Scenes/Coin/coin.tscn" id="4_wyulo"]
 
-[node name="BaseLevel" instance=ExtResource("1_y7fa6")]
+[node name="Level7" instance=ExtResource("1_y7fa6")]
+tile_map_data = PackedByteArray("AAAPAAIAAQAHAAAAAAAPAAMAAQAHAAAAAAAPAAQAAQAHAAAAAAAPAAUAAQACAAkAAAAPAAYAAQAHAAAAAAAPAAcAAQAHAAAAAAAPAAgAAQAHAAAAAAAPAAkAAQAHAAAAAAAPAAoAAQACAAoAAAADAAoAAQAAAAoAAAADAAkAAQAHAAAAAAADAAgAAQAHAAAAAAADAAcAAQAHAAAAAAADAAYAAQAHAAAAAAADAAUAAQAHAAAAAAADAAQAAQAHAAAAAAADAAMAAQAHAAAAAAADAAIAAQAHAAAAAAAPAAEAAQAHAAAAAAAPAAAAAQACAAgAAAAOAAAAAQAHAAEAAAANAAAAAQAHAAEAAAAMAAAAAQAHAAEAAAALAAAAAQAHAAEAAAAKAAAAAQAHAAEAAAAJAAAAAQAHAAEAAAAIAAAAAQABAAgAAAAHAAAAAQAHAAEAAAAGAAAAAQAHAAEAAAAFAAAAAQAHAAEAAAAEAAAAAQAHAAEAAAADAAAAAQAAAAgAAAADAAEAAQAHAAAAAAAIAAEAAQABAAYAAAAOAAUAAQAHAAEAAAANAAUAAQAHAAEAAAAMAAUAAQABAAgAAAALAAUAAQAHAAEAAAAKAAUAAQABAAgAAAAJAAUAAQAHAAEAAAAIAAUAAQABAAgAAAAHAAUAAQAHAAEAAAAGAAUAAQAEAAAAAAAFAAUAAQAAAAQAAAAFAAYAAQAAAAYAAAAGAAYAAQACAAYAAAAIAAYAAQABAAYAAAAKAAYAAQABAAYAAAAMAAYAAQABAAYAAAAEAAoAAQAHAAEAAAAFAAoAAQAHAAEAAAAGAAoAAQAHAAEAAAAHAAoAAQAHAAEAAAAIAAoAAQAHAAEAAAAJAAoAAQAHAAEAAAAKAAoAAQAHAAEAAAALAAoAAQAHAAEAAAAMAAoAAQAHAAEAAAANAAoAAQAHAAEAAAAOAAoAAQAHAAEAAAA=")
+
+[node name="Goal" parent="." index="0"]
+position = Vector2(480, 96)
+
+[node name="Goal2" parent="." index="1" instance=ExtResource("2_pyg1t")]
+position = Vector2(608, 96)
+
+[node name="Goal3" parent="." index="2" instance=ExtResource("2_pyg1t")]
+position = Vector2(288, 416)
+
+[node name="Goal4" parent="." index="3" instance=ExtResource("2_pyg1t")]
+position = Vector2(480, 480)
+
+[node name="Goal5" parent="." index="4" instance=ExtResource("2_pyg1t")]
+position = Vector2(608, 480)
+
+[node name="Goal6" parent="." index="5" instance=ExtResource("2_pyg1t")]
+position = Vector2(736, 480)
+
+[node name="Coin" parent="." index="6"]
+position = Vector2(352, 96)
+
+[node name="Coin2" parent="." index="7" instance=ExtResource("4_wyulo")]
+position = Vector2(672, 96)
+
+[node name="Coin3" parent="." index="8" instance=ExtResource("4_wyulo")]
+position = Vector2(736, 96)
+
+[node name="Coin4" parent="." index="9" instance=ExtResource("4_wyulo")]
+position = Vector2(288, 352)
+
+[node name="Coin5" parent="." index="10" instance=ExtResource("4_wyulo")]
+position = Vector2(288, 480)
+
+[node name="Coin6" parent="." index="11" instance=ExtResource("4_wyulo")]
+position = Vector2(928, 416)
+
+[node name="Coin7" parent="." index="12" instance=ExtResource("4_wyulo")]
+position = Vector2(928, 480)
+
+[node name="Coin8" parent="." index="13" instance=ExtResource("4_wyulo")]
+position = Vector2(864, 416)
+
+[node name="Coin9" parent="." index="14" instance=ExtResource("4_wyulo")]
+position = Vector2(864, 480)
+
+[node name="Player" parent="." index="15"]
+position = Vector2(672, 288)
+
+[node name="Box" parent="." index="16"]
+position = Vector2(608, 416)
+
+[node name="Box2" parent="." index="17" instance=ExtResource("3_p3g8w")]
+position = Vector2(800, 96)
+
+[node name="Box3" parent="." index="18" instance=ExtResource("3_p3g8w")]
+position = Vector2(864, 96)
+
+[node name="Box4" parent="." index="19" instance=ExtResource("3_p3g8w")]
+position = Vector2(480, 416)
+
+[node name="Box5" parent="." index="20" instance=ExtResource("3_p3g8w")]
+position = Vector2(288, 96)
+
+[node name="Box6" parent="." index="21" instance=ExtResource("3_p3g8w")]
+position = Vector2(736, 416)

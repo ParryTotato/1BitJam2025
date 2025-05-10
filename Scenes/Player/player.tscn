@@ -343,6 +343,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_e08e2")
 
 [node name="Line2D" type="Line2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_xpcdj")
 points = PackedVector2Array(192, 64, 512, 64)
 width = 30.0

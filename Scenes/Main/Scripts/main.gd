@@ -67,6 +67,8 @@ func _on_level_completed(level_completed: String) -> void:
 			load_level("res://Scenes/Levels/level_3.tscn")
 		"Level3":
 			load_level("res://Scenes/Levels/level_4.tscn")
+		"Level7":
+			load_level("res://Scenes/Levels/level_8.tscn")
 
 
 func load_level(level: String) -> void:

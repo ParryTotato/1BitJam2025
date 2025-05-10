@@ -1,5 +1,5 @@
 class_name Translocator
-extends Sprite2D
+extends CharacterBody2D
 
 func disappear():
 	visible = false
